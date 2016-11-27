@@ -1,0 +1,33 @@
+{
+  "name": "cayley-broker",
+  "version": "0.1.0",
+  "description": "",
+  "main": "lib/index.js",
+  "scripts": {
+    "build": "babel src --out-dir lib",
+    "docker-build": "docker build -t cayley-broker . && docker tag cayley-broker memoid.space/cayley-broker",
+    "docker-push": "docker push memoid.space/cayley-broker",
+    "hyper-run": "hyper rm -f cayley-broker && hyper run -d --name cayley-broker --link cayley --link kafka memoid.space/cayley-broker",
+    "hyper-logs": "hyper logs -f cayley-broker",
+    "hyper": "npm run build && npm run docker-build && npm run docker-push && npm run hyper-run && npm run hyper-logs",
+    "start": "npm run build && node -r dotenv/config lib/index.js dotenv_config_silent=true"
+  },
+  "author": "Joost Verdoorn",
+  "license": "MIT",
+  "dependencies": {
+    "cayley": "^0.2.1",
+    "dotenv": "^2.0.0",
+    "memux": "^0.1.1",
+    "p-queue": "^0.2.0",
+    "rxjs": "^5.0.0-rc.4"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.18.0",
+    "babel-preset-stage-0": "^6.16.0"
+  },
+  "babel": {
+    "presets": [
+      "stage-0"
+    ]
+  }
+}
