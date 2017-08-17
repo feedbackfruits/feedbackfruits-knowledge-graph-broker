@@ -1,0 +1,40 @@
+version: 2
+jobs:
+  build:
+    working_directory: ~/feedbackfruits-knowledge-graph-broker
+    docker:
+      - image: node:latest
+        environment:
+          NODE_ENV: test
+      - image: quay.io/cayleygraph/cayley:latest
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+          - node_modules-{{ checksum "package.json" }}-{{ checksum "package-lock.json" }}
+          - node_modules-
+
+      - run:
+          name: Install dependencies
+          command: npm install
+
+      - save_cache:
+          paths:
+            - node_modules
+          key: node_modules-{{ checksum "package.json" }}-{{ checksum "package-lock.json" }}
+
+      - run: npm test
+      - run: npm run coverage
+
+      - store_artifacts:
+          path: coverage
+
+      - deploy:
+          name: Deploy to Heroku
+          command: |
+            ssh-keyscan -H heroku.com >> ~/.ssh/known_hosts
+            if [ "${CIRCLE_BRANCH}" == "master" ]; then
+              git push git@heroku.com:staging-fbf-knowledge-graph-b.git $CIRCLE_SHA1:refs/heads/master -f
+            elif [[ $CIRCLE_TAG =~ ^v[0-9]+\.[0-9]+ ]]; then
+              git push git@heroku.com:fbf-knowledge-graph-broker.git $CIRCLE_SHA1:refs/heads/master -f
+            fi
