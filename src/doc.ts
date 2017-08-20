@@ -3,7 +3,7 @@ export type Doc = {
 };
 
 export const isDoc = (doc: object) => {
-  return typeof doc['@id'] === 'string';
+  return doc != null && typeof doc['@id'] === 'string';
 };
 
 export default Doc;

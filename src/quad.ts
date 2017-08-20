@@ -6,7 +6,8 @@ export type Quad = {
 };
 
 export const isQuad = (quad: object): quad is Quad => {
-  return typeof quad === 'object' &&
+  return quad != null &&
+         typeof quad === 'object' &&
          typeof quad['subject'] === 'string' &&
          typeof quad['predicate'] === 'string' &&
          typeof quad['object'] === 'string';

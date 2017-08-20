@@ -1,0 +1,10 @@
+# Example can be found at https://github.com/cayleygraph/cayley/blob/master/data/testdata.nq
+
+# Entity 'Number theory'
+<http://dbpedia.org/resource/Number_theory> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://knowledge.express/Entity> .
+<http://dbpedia.org/resource/Number_theory> <http://schema.org/name> "Number theory" .
+
+# Fields of study
+<http://academic.microsoft.com/#/detail/169654258> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://academic.microsoft.com/FieldOfStudy> .
+<http://academic.microsoft.com/#/detail/169654258> <http://schema.org/name> <http://academic.microsoft.com/FieldOfStudy> .
+<http://academic.microsoft.com/#/detail/169654258> <http://schema.org/sameAs> <http://dbpedia.org/resource/Number_theory> .
