@@ -46,7 +46,7 @@
     "cayley": "^0.2.1",
     "dotenv": "^4.0.0",
     "jsonld": "^0.4.12",
-    "memux": "knowledge-express/memux#master",
+    "memux": "knowledge-express/memux#feature/more-typescript-things",
     "n3": "^0.11.1",
     "p-queue": "^0.2.0",
     "pm2": "^2.1.5",
