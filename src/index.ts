@@ -61,11 +61,18 @@ async function getDoc(subject): Promise<Quad[]> {
 }
 
 async function init({ name, url, input, output }: BrokerConfig) {
+  const ssl = {
+    key: Config.KAFKA_PRIVATE_KEY,
+    cert: Config.KAFKA_CERT,
+    ca: Config.KAFKA_CA,
+  };
+
   const send = await createSend({
     name,
     url,
     topic: output,
-    concurrency: parseInt(Config.CONCURRENCY)
+    concurrency: Config.CONCURRENCY,
+    ssl
   });
 
   const receive = async (operation: DocOperation) => {
@@ -100,7 +107,8 @@ async function init({ name, url, input, output }: BrokerConfig) {
     name,
     url,
     topic: input,
-    receive
+    receive,
+    ssl
   });
 }
 

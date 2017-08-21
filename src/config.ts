@@ -6,8 +6,12 @@ const {
   KAFKA_ADDRESS = 'tcp://localhost:9092',
   INPUT_TOPIC = 'update_requests',
   OUTPUT_TOPIC = 'updates',
-  CONCURRENCY = '100',
+  KAFKA_PRIVATE_KEY,
+  KAFKA_CERT,
+  KAFKA_CA,
 } = process.env;
+
+const CONCURRENCY = parseInt(process.env.CONCURRENCY) || 100;
 
 export {
   NAME,
@@ -16,4 +20,7 @@ export {
   INPUT_TOPIC,
   OUTPUT_TOPIC,
   CONCURRENCY,
+  KAFKA_PRIVATE_KEY,
+  KAFKA_CERT,
+  KAFKA_CA,
 };

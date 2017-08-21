@@ -23,22 +23,6 @@ jobs:
           command: |
             curl --fail -H "Content-Type: multipart/form-data" -XPOST -F NQuadFile=@seeds/cayley.nq localhost:64210/api/v1/write/file/nquad
 
-      # - run:
-      #     name: Install Docker Compose
-      #     command: |
-      #       set -x
-      #       curl -L https://github.com/docker/compose/releases/download/1.15.0/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
-      #       chmod +x /usr/local/bin/docker-compose
-      #
-      # - setup_remote_docker
-      #
-      # - run:
-      #     name: Start Knowledge bus
-      #     command: |
-      #       git clone https://github.com/feedbackfruits/feedbackfruits-knowledge-bus
-      #       set -x
-      #       docker-compose -f feedbackfruits-knowledge-bus/docker-compose.yml up -d
-
       - restore_cache:
           keys:
           - node_modules-{{ checksum "package.json" }}-{{ checksum "package-lock.json" }}
