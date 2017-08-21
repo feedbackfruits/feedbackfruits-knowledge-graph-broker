@@ -1,11 +1,8 @@
 import { Operation } from 'memux';
-import Doc from './doc';
-export declare type DocOperation = Operation<Doc>;
+import { Doc } from 'feedbackfruits-knowledge-engine';
 export declare type BrokerConfig = {
     name: string;
-    url: string;
-    input: string;
-    output: string;
 };
-declare function init({name, url, input, output}: BrokerConfig): Promise<any>;
+export declare type SendFn = (operation: Operation<Doc>) => Promise<void>;
+declare function init({name}: BrokerConfig): Promise<void>;
 export default init;

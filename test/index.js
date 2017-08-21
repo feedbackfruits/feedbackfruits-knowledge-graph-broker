@@ -33,9 +33,6 @@ test('it works', async (t) => {
 
     await init({
       name: NAME,
-      url: KAFKA_ADDRESS,
-      input: INPUT_TOPIC,
-      output: OUTPUT_TOPIC,
     });
 
     const doc = {

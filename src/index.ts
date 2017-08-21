@@ -1,81 +1,23 @@
-import { createSend, createReceive, Operation, isOperation } from 'memux';
-import fetch from 'node-fetch';
+import { Operation, isOperation } from 'memux';
+import { Annotator, Doc } from 'feedbackfruits-knowledge-engine';
 
 const Cayley = require('cayley');
-const { Observable: { empty } } = require('rxjs');
-const PQueue = require('p-queue');
 const jsonld = require('jsonld');
 
 import * as Config from './config';
-import Doc from './doc';
 import { Quad } from './quad';
-import { docToQuads, quadsToDocs, encodeIRI } from './helpers';
+import { docToQuads, quadsToDocs, getDoc } from './helpers';
 
 const cayley = Cayley(Config.CAYLEY_ADDRESS);
 
-export type DocOperation = Operation<Doc>;
-
 export type BrokerConfig = {
-  name: string,
-  url: string,
-  input: string,
-  output: string,
+  name: string
 };
 
-async function getDoc(subject): Promise<Quad[]> {
-  console.log('Getting doc:', subject);
-  const g = cayley.graph;
-  const query = `
-  var subject = ${JSON.stringify(encodeIRI(subject))};
-  g.V(subject)
-  	.OutPredicates()
-  	.ForEach(function mapPredicates(node) {
-        var predicate = node.id;
-        return g.V(subject)
-          .Out(predicate)
-          .ForEach(function emitObject(node) {
-            var object = node.id;
-            g.Emit({
-              subject: subject,
-              predicate: predicate,
-              object: object
-            });
-          });
-      })`;
+export type SendFn = (operation: Operation<Doc>) => Promise<void>;
 
-  const url = `${Config.CAYLEY_ADDRESS}/api/v1/query/gizmo`;
-  // console.log('Fetching from url:', url, fetch.toString());
-
-  return fetch(url, {
-    method: 'post',
-    body: query
-  })
-  .then(res => {
-    // console.log('Got response:', res);
-    return res.json();
-  })
-  .then(({ result }) => {
-        console.log('Returning resulting quads:', result);
-        return result as Quad[];
-      })
-}
-
-async function init({ name, url, input, output }: BrokerConfig) {
-  const ssl = {
-    key: Config.KAFKA_PRIVATE_KEY,
-    cert: Config.KAFKA_CERT,
-    ca: Config.KAFKA_CA,
-  };
-
-  const send = await createSend({
-    name,
-    url,
-    topic: output,
-    concurrency: Config.CONCURRENCY,
-    ssl
-  });
-
-  const receive = async (operation: DocOperation) => {
+async function init({ name }: BrokerConfig) {
+  const receive = (send: SendFn) => async (operation: Operation<Doc>) => {
     if (!isOperation(operation)) throw new Error();
     const { action, data } = operation;
 
@@ -103,13 +45,12 @@ async function init({ name, url, input, output }: BrokerConfig) {
     });
   };
 
-  return createReceive({
+  return Annotator({
     name,
-    url,
-    topic: input,
     receive,
-    ssl
+    customConfig: Config
   });
+
 }
 
 export default init;
@@ -118,11 +59,7 @@ export default init;
 declare const require: any;
 if (require.main === module) {
   console.log("Running as script.");
-  console.log('Initializing with config:', Config);
   init({
     name: Config.NAME,
-    url: Config.KAFKA_ADDRESS,
-    input: Config.INPUT_TOPIC,
-    output: Config.OUTPUT_TOPIC,
   }).catch(console.error);
 }
