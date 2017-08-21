@@ -46,6 +46,7 @@
     "@types/p-queue": "^1.1.0",
     "cayley": "^0.2.1",
     "dotenv": "^4.0.0",
+    "feedbackfruits-knowledge-engine": "github:feedbackfruits/feedbackfruits-knowledge-engine#feature/better-base",
     "isuri": "^2.0.3",
     "jsonld": "^0.4.12",
     "memux": "knowledge-express/memux#feature/more-typescript-things",

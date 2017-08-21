@@ -6,3 +6,4 @@ export declare function isIRI(str: string): boolean;
 export declare function decodeIRI(str: string): string;
 export declare const quadsToDocs: (quads: Quad[]) => Doc[];
 export declare const docToQuads: (doc: Doc) => Promise<Quad[]>;
+export declare function getDoc(subject: any): Promise<Quad[]>;

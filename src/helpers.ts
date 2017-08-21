@@ -2,6 +2,9 @@ import Quad from './quad';
 import Doc from './doc';
 import * as jsonld from 'jsonld';
 import * as isuri from 'isuri';
+import fetch from 'node-fetch';
+
+import { CAYLEY_ADDRESS } from './config';
 
 export function iriify(str: string) {
   return `<${str}>`;
@@ -60,3 +63,41 @@ export const docToQuads = async (doc: Doc): Promise<Quad[]> => {
     });
   });
 };
+
+
+export async function getDoc(subject): Promise<Quad[]> {
+  console.log('Getting doc:', subject);
+  const query = `
+  var subject = ${JSON.stringify(encodeIRI(subject))};
+  g.V(subject)
+  	.OutPredicates()
+  	.ForEach(function mapPredicates(node) {
+        var predicate = node.id;
+        return g.V(subject)
+          .Out(predicate)
+          .ForEach(function emitObject(node) {
+            var object = node.id;
+            g.Emit({
+              subject: subject,
+              predicate: predicate,
+              object: object
+            });
+          });
+      })`;
+
+  const url = `${CAYLEY_ADDRESS}/api/v1/query/gizmo`;
+  // console.log('Fetching from url:', url, fetch.toString());
+
+  return fetch(url, {
+    method: 'post',
+    body: query
+  })
+  .then(res => {
+    // console.log('Got response:', res);
+    return res.json();
+  })
+  .then(({ result }) => {
+        console.log('Returning resulting quads:', result);
+        return result as Quad[];
+      })
+}
