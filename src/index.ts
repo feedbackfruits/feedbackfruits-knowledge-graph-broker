@@ -6,7 +6,7 @@ const jsonld = require('jsonld');
 
 import * as Config from './config';
 import { Quad } from './quad';
-import { docToQuads, quadsToDocs, getDoc } from './helpers';
+import { docToQuads, quadsToDocs, getDoc, writeQuads, deleteQuads } from './helpers';
 
 const cayley = Cayley(Config.CAYLEY_ADDRESS);
 
@@ -25,24 +25,39 @@ async function init({ name }: BrokerConfig) {
 
     console.log('Processing quads:', action, data, quads);
 
-    return new Promise<void>((resolve, reject) => {
-      if (quads.length === 0) return resolve();
+    if (quads.length === 0) return;
 
-      cayley[action](quads, async (error, body, response) => {
-        console.log('Quads sent to cayley:', error, body);
-        if (error != null) return reject(error);
-        if (response.statusCode >= 200 && response.statusCode < 400) {
-          return Promise.all(quadsToDocs(await getDoc(data['@id'])).map(data => send({ action, key: data['@id'], data }))).then(() => resolve());
+    switch(action) {
+      case 'write':
+        try {
+          console.log(await writeQuads(quads));
+        } catch(e) {
+          console.error(e);
+          if (e.message.match(/quad exists/)) {
+            console.log('Found existing quad in: ', quads);
+            return;
+          }
+          throw e;
         }
-
-        if (response.statusCode === 400) {
-          if ((body.error || body).match(/quad exists/)) return resolve();
-          if ((body.error || body).match(/invalid quad/)) return resolve();
+      break;
+      case 'delete':
+      try {
+        console.log(await deleteQuads(quads));
+      } catch(e) {
+        console.error(e);
+        if (e.message.match(/quad does not exists/)) {
+          console.log('Found existing quad in: ', quads);
+          return;
         }
+        throw e;
+      }
+      break;
+    }
 
-        reject();
-      });
-    });
+    console.log('Quads processed. Sending updated doc...');
+
+    await Promise.all(quadsToDocs(await getDoc(data['@id'])).map(data => send({ action, key: data['@id'], data })));
+    return;
   };
 
   return Annotator({

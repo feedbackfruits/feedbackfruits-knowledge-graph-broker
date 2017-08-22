@@ -11,7 +11,6 @@ export function iriify(str: string) {
 }
 
 export function encodeIRI(str: string) {
-  console.log('Valid URI?', str, isuri.isValid(str));
   if (isuri.isValid(str)) return iriify(str);
   return str;
 }
@@ -64,6 +63,12 @@ export const docToQuads = async (doc: Doc): Promise<Quad[]> => {
   });
 };
 
+export const quadsToNQuads = (quads: Quad[]): Array<string> => {
+  return quads.map(quad => {
+    const { subject, predicate, object, label } = quad;
+    return `${subject} ${predicate} ${JSON.stringify(object)} ${label || '.'}`;
+  });
+};
 
 export async function getDoc(subject): Promise<Quad[]> {
   console.log('Getting doc:', subject);
@@ -100,4 +105,32 @@ export async function getDoc(subject): Promise<Quad[]> {
         console.log('Returning resulting quads:', result);
         return result as Quad[];
       })
+}
+
+export function writeQuads(quads: Quad[]) {
+  const nquads = quadsToNQuads(quads);
+  console.log('Writing p-quads:', nquads);
+  return fetch(`${CAYLEY_ADDRESS}/api/v2/write`, {
+    method: 'post',
+    body: nquads.join('\n')
+  })
+  .then(response => response.json())
+  .then(result => {
+    if ('error' in result) throw new Error(result.error);
+    return result;
+  });
+}
+
+export function deleteQuads(quads: Quad[]) {
+  const nquads = quadsToNQuads(quads);
+  console.log('Deleting p-quads:', nquads);
+  return fetch(`${CAYLEY_ADDRESS}/api/v2/delete`, {
+    method: 'post',
+    body: nquads.join('\n')
+  })
+  .then(response => response.json())
+  .then(result => {
+    if ('error' in result) throw result.error;
+    return result;
+  });
 }

@@ -8,7 +8,12 @@ jobs:
           NODE_ENV: test
           INPUT_TOPIC: update_requests
           OUTPUT_TOPIC: updates
-      - image: quay.io/cayleygraph/cayley:latest
+      - image: feedbackfruits/feedbackfruits-knowledge-graph:latest
+        auth:
+          username: $DOCKERHUB_USER
+          password: $DOCKERHUB_PASSWORD
+        environment:
+          CAYLEY_ENV: test
       - image: wurstmeister/zookeeper:latest
       - image: wurstmeister/kafka:latest
         environment:
