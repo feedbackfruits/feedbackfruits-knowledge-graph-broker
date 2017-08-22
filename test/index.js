@@ -1,4 +1,6 @@
 import test from 'ava';
+import sinon from 'sinon';
+
 import init from '../lib';
 import memux from 'memux';
 import { NAME, KAFKA_ADDRESS, INPUT_TOPIC, OUTPUT_TOPIC } from '../lib/config';
@@ -7,7 +9,7 @@ test('it exists', t => {
   t.not(init, undefined);
 });
 
-test('it works', async (t) => {
+test('it works and deduplicates', async (t) => {
   try {
     let _resolve, _reject;
     const resultPromise = new Promise((resolve, reject) => {
@@ -15,9 +17,12 @@ test('it works', async (t) => {
       _reject = reject;
     });
 
+    const spy = sinon.spy();
+    let count = 0;
     const receive = (message) => {
       console.log('Received message!', message);
-      _resolve(message);
+      count++;
+      count === 1 ? _resolve(message) : spy();
     };
 
     const send = await memux({
@@ -40,10 +45,19 @@ test('it works', async (t) => {
       'http://schema.org/name': [ 'bla' ],
     };
     const operation = { action: 'write', key: doc['@id'], data: doc}
+
+    const waitingPromise = new Promise((resolve) => {
+      setTimeout(() => resolve(), 2000);
+    });
+
     await send(operation);
 
     let result = await resultPromise;
-    return t.deepEqual(result, { ...operation, label: NAME });
+    t.deepEqual(result, { ...operation, label: NAME });
+
+    await send(operation);
+    await waitingPromise;
+    return t.is(spy.called, false);
   } catch(e) {
     console.error(e);
     throw e;
