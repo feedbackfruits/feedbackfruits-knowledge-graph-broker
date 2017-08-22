@@ -1,0 +1,22 @@
+version: '3.2'
+services:
+  zookeeper:
+    image: wurstmeister/zookeeper:latest
+  kafka:
+    image: wurstmeister/kafka:latest
+    environment:
+      KAFKA_AUTO_CREATE_TOPICS_ENABLE: 'false'
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_CREATE_TOPICS: "development_update_requests:1:1,development_updates:1:1:compact"
+  graph:
+    image: feedbackfruits/feedbackfruits-knowledge-graph:latest
+    environment:
+      CAYLEY_ENV: test
+  graph-broker:
+    build: .
+    environment:
+      CAYLEY_ADDRESS: http://graph:64210
+      KAFKA_ADDRESS: tcp://kafka:9092
+      NODE_ENV: development
+      INPUT_TOPIC: development_update_requests
+      OUTPUT_TOPIC: development_updates
