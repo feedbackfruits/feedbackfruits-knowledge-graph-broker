@@ -1,79 +1,14 @@
-import Quad from './quad';
-import Doc from './doc';
+import { Quad, Doc, Helpers } from 'feedbackfruits-knowledge-engine';
 import * as jsonld from 'jsonld';
 import * as isuri from 'isuri';
 import fetch from 'node-fetch';
 
 import { CAYLEY_ADDRESS } from './config';
 
-export function iriify(str: string) {
-  return `<${str}>`;
-}
-
-export function encodeIRI(str: string) {
-  if (isuri.isValid(str)) return iriify(str);
-  return str;
-}
-
-export function isIRI(str: string) {
-  return /<(.*)>/.test(str);
-}
-
-export function decodeIRI(str: string) {
-  if (isIRI(str)) return str.slice(1, str.length - 1);
-  return str;
-}
-
-// The result of this function is based on the expected input of
-// the jsonld library to produce the quads we want.
-export const quadsToDocs = (quads: Array<Quad>): Array<Doc> => {
-  return Object.values(quads.reduce((memo, quad) => {
-    const { subject, predicate, object } = quad;
-    // if (predicate === 'http://www.w3.org/1999/02/22-rdf-syntax-ns#type') predicate = '@id';
-    return {
-      ...memo,
-      [decodeIRI(subject)]: {
-        ...(memo[decodeIRI(subject)] || { '@id': decodeIRI(subject) }),
-        [decodeIRI(predicate)]: [
-          ...((memo[decodeIRI(subject)] && memo[decodeIRI(subject)][decodeIRI(predicate)]) || []),
-          object
-        ]
-      }
-    };
-  }, {}));
-};
-
-export const docToQuads = async (doc: Doc): Promise<Quad[]> => {
-  return new Promise<Quad[]>((resolve, reject) => {
-    jsonld.toRDF(doc, { format: 'application/nquads' }, function(err, nquads) {
-      if (err != null) return reject(err);
-      // console.log('Parsing nquads:', nquads);
-      const lines = nquads.split('\n');
-      lines.pop() // Remove empty newline
-      const quads = lines.map(line => {
-        // A line looks like: `<<http://some.domain/janedoe>> <<http://schema.org/jobTitle>> "\\"Professor\\"" .␊
-        const [ subject, predicate, object ] = line.split(/ (?=["<\.])/);
-
-        // console.log('Parsing object:', object);
-        return { subject, predicate, object: JSON.parse(object) };
-      });
-
-      return resolve(quads);
-    });
-  });
-};
-
-export const quadsToNQuads = (quads: Quad[]): Array<string> => {
-  return quads.map(quad => {
-    const { subject, predicate, object, label } = quad;
-    return `${subject} ${predicate} ${JSON.stringify(object)} ${label || '.'}`;
-  });
-};
-
 export async function getDoc(subject): Promise<Quad[]> {
   console.log('Getting doc:', subject);
   const query = `
-  var subject = ${JSON.stringify(encodeIRI(subject))};
+  var subject = ${JSON.stringify(Helpers.encodeIRI(subject))};
   g.V(subject)
   	.OutPredicates()
   	.ForEach(function mapPredicates(node) {
@@ -108,7 +43,7 @@ export async function getDoc(subject): Promise<Quad[]> {
 }
 
 export function writeQuads(quads: Quad[]) {
-  const nquads = quadsToNQuads(quads);
+  const nquads = Helpers.quadsToNQuads(quads);
   console.log('Writing p-quads:', nquads);
   return fetch(`${CAYLEY_ADDRESS}/api/v2/write`, {
     method: 'post',
@@ -122,7 +57,7 @@ export function writeQuads(quads: Quad[]) {
 }
 
 export function deleteQuads(quads: Quad[]) {
-  const nquads = quadsToNQuads(quads);
+  const nquads = Helpers.quadsToNQuads(quads);
   console.log('Deleting p-quads:', nquads);
   return fetch(`${CAYLEY_ADDRESS}/api/v2/delete`, {
     method: 'post',

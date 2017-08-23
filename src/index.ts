@@ -1,12 +1,11 @@
 import { Operation, isOperation } from 'memux';
-import { Annotator, Doc } from 'feedbackfruits-knowledge-engine';
+import { Annotator, Doc, Helpers } from 'feedbackfruits-knowledge-engine';
 
 const Cayley = require('cayley');
 const jsonld = require('jsonld');
 
 import * as Config from './config';
-import { Quad } from './quad';
-import { docToQuads, quadsToDocs, getDoc, writeQuads, deleteQuads } from './helpers';
+import { getDoc, writeQuads, deleteQuads } from './helpers';
 
 const cayley = Cayley(Config.CAYLEY_ADDRESS);
 
@@ -21,7 +20,7 @@ async function init({ name }: BrokerConfig) {
     if (!isOperation(operation)) throw new Error();
     const { action, data } = operation;
 
-    const quads = await docToQuads(data);
+    const quads = await Helpers.docToQuads(data);
 
     console.log('Processing quads:', action, data, quads);
 
@@ -56,7 +55,7 @@ async function init({ name }: BrokerConfig) {
 
     console.log('Quads processed. Sending updated doc...');
 
-    await Promise.all(quadsToDocs(await getDoc(data['@id'])).map(data => send({ action, key: data['@id'], data })));
+    await Promise.all(Helpers.quadsToDocs(await getDoc(data['@id'])).map(data => send({ action, key: data['@id'], data })));
     return;
   };
 

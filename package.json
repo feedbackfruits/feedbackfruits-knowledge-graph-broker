@@ -49,7 +49,7 @@
     "feedbackfruits-knowledge-engine": "github:feedbackfruits/feedbackfruits-knowledge-engine#feature/better-base",
     "isuri": "^2.0.3",
     "jsonld": "^0.4.12",
-    "memux": "knowledge-express/memux#feature/more-typescript-things",
+    "memux": "knowledge-express/memux#semver:~0.4.0",
     "n3": "^0.11.1",
     "node-fetch": "^1.7.2",
     "p-queue": "^0.2.0",
