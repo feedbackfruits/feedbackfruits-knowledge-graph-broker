@@ -11,7 +11,7 @@ const {
   KAFKA_CA,
 } = process.env;
 
-const CONCURRENCY = parseInt(process.env.CONCURRENCY) || 100;
+const CONCURRENCY = parseInt(process.env.CONCURRENCY) || 5;
 
 export {
   NAME,

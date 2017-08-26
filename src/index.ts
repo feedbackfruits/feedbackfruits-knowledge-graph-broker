@@ -75,5 +75,8 @@ if (require.main === module) {
   console.log("Running as script.");
   init({
     name: Config.NAME,
-  }).catch(console.error);
+  }).catch((err) => {
+    console.error(err);
+    throw err;
+  });
 }
