@@ -41,6 +41,7 @@
   ],
   "license": "MIT",
   "dependencies": {
+    "@types/lodash": "^4.14.74",
     "@types/n3": "0.0.2",
     "@types/node": "^8.0.24",
     "@types/p-queue": "^1.1.0",
@@ -49,6 +50,7 @@
     "feedbackfruits-knowledge-engine": "github:feedbackfruits/feedbackfruits-knowledge-engine#feature/better-base",
     "isuri": "^2.0.3",
     "jsonld": "^0.4.12",
+    "lodash": "^4.17.4",
     "memux": "github:knowledge-express/memux#semver:~0.4.0",
     "n3": "^0.11.1",
     "node-fetch": "^1.7.2",

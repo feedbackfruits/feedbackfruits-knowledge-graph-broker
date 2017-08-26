@@ -5,7 +5,7 @@ import fetch from 'node-fetch';
 
 import { CAYLEY_ADDRESS } from './config';
 
-export async function getDoc(subject): Promise<Quad[]> {
+export async function getQuads(subject): Promise<Quad[]> {
   console.log('Getting doc:', subject);
   const query = `
   var subject = ${JSON.stringify(Helpers.encodeIRI(subject))};
@@ -38,7 +38,7 @@ export async function getDoc(subject): Promise<Quad[]> {
   })
   .then(({ result }) => {
         console.log('Returning resulting quads:', result);
-        return result as Quad[];
+        return (result || []) as Quad[];
       })
 }
 
