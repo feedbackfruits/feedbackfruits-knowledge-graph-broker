@@ -31,7 +31,6 @@ jobs:
       - restore_cache:
           keys:
           - node_modules-{{ checksum "package.json" }}-{{ checksum "package-lock.json" }}
-          - node_modules-
 
       - run:
           name: Install dependencies
