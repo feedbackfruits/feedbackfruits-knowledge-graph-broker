@@ -36,14 +36,6 @@ const concepts = [
   "<http://dbpedia.org/resource/Elementary_arithmetic>",
   "<http://dbpedia.org/resource/Integer>",
   "<http://dbpedia.org/resource/Greatest_common_divisor>",
-  "<http://dbpedia.org/resource/Integer>",
-  "<http://dbpedia.org/resource/Divisor>",
-  "<http://dbpedia.org/resource/Greatest_common_divisor>",
-  "<http://dbpedia.org/resource/Elementary_arithmetic>",
-  "<http://dbpedia.org/resource/Integer>",
-  "<http://dbpedia.org/resource/Greatest_common_divisor>",
-  "<http://dbpedia.org/resource/Divisor>",
-  "<http://dbpedia.org/resource/Elementary_arithmetic>"
 ];
 
 test('it exists', t => {
