@@ -1,14 +1,21 @@
-import { Quad, Doc, Helpers } from 'feedbackfruits-knowledge-engine';
+import { Quad, Doc, Helpers, Context } from 'feedbackfruits-knowledge-engine';
 import * as jsonld from 'jsonld';
 import * as isuri from 'isuri';
 import fetch from 'node-fetch';
 
 import { CAYLEY_ADDRESS } from './config';
 
+export async function existingQuadsForDoc(doc: Doc) {
+  const flattened = await Doc.flatten(doc, Context.context);
+  const ids = flattened.map(doc => doc["@id"]);
+  const quadss = await Promise.all(ids.map(getQuads));
+  return quadss.reduce((memo, quads) => [ ...memo, ...quads ], []);
+}
+
 export async function getQuads(subject): Promise<Quad[]> {
   console.log('Getting doc:', subject);
   const query = `
-  var subject = ${JSON.stringify(Helpers.encodeIRI(subject))};
+  var subject = "<${subject}>";
   g.V(subject)
   	.OutPredicates()
   	.ForEach(function mapPredicates(node) {
@@ -43,11 +50,11 @@ export async function getQuads(subject): Promise<Quad[]> {
 }
 
 export function writeQuads(quads: Quad[]) {
-  const nquads = Helpers.quadsToNQuads(quads);
+  const nquads = Quad.toNQuads(quads);
   console.log('Writing p-quads:', nquads);
   return fetch(`${CAYLEY_ADDRESS}/api/v2/write`, {
     method: 'post',
-    body: nquads.join('\n')
+    body: nquads
   })
   .then(response => response.json())
   .then(result => {
@@ -57,11 +64,11 @@ export function writeQuads(quads: Quad[]) {
 }
 
 export function deleteQuads(quads: Quad[]) {
-  const nquads = Helpers.quadsToNQuads(quads);
+  const nquads = Quad.toNQuads(quads);
   console.log('Deleting p-quads:', nquads);
   return fetch(`${CAYLEY_ADDRESS}/api/v2/delete`, {
     method: 'post',
-    body: nquads.join('\n')
+    body: nquads
   })
   .then(response => response.json())
   .then(result => {

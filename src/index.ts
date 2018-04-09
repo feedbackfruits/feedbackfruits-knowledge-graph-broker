@@ -1,12 +1,12 @@
 import { Operation, isOperation } from 'memux';
-import { Annotator, Doc, Helpers } from 'feedbackfruits-knowledge-engine';
+import { Annotator, Doc } from 'feedbackfruits-knowledge-engine';
 
 const Cayley = require('cayley');
 const jsonld = require('jsonld');
 import { unionBy, differenceBy } from 'lodash';
 
 import * as Config from './config';
-import { getQuads, writeQuads, deleteQuads } from './helpers';
+import * as Helpers from './helpers';
 
 const cayley = Cayley(Config.CAYLEY_ADDRESS);
 
@@ -25,8 +25,8 @@ async function init({ name }: BrokerConfig) {
     if (!isOperation(operation)) throw new Error();
     const { action, data } = operation;
 
-    const existingQuads = await getQuads(data['@id']);
-    const quads = await Helpers.docToQuads(data);
+    const existingQuads = await Helpers.existingQuadsForDoc(data);
+    const quads = await Doc.toQuads(data);
     const diff = differenceBy(unionBy(quads, existingQuads, quadIdentity), existingQuads, quadIdentity);
 
     // console.log('Processing quads:', action, data, quads);
@@ -37,36 +37,19 @@ async function init({ name }: BrokerConfig) {
     let docs;
     switch(action) {
       case 'write':
-        console.log(await writeQuads(diff));
-        docs = Helpers.quadsToDocs(unionBy(existingQuads, diff, quadIdentity));
-        // try {
-        // } catch(e) {
-        //   console.error(e);
-        //   if (e.message.match(/quad exists/)) {
-        //     // console.log('Found existing quad in: ', quads);
-        //     return;
-        //   }
-        //   throw e;
-        // }
+        await Helpers.writeQuads(diff);
+        // docs = Helpers.quadsToDocs(unionBy(existingQuads, diff, quadIdentity));
       break;
-      case 'delete':
-      console.log(await deleteQuads(diff));
-      docs = Helpers.quadsToDocs(differenceBy(existingQuads, diff, quadIdentity));
-      // try {
-      // } catch(e) {
-      //   console.error(e);
-      //   if (e.message.match(/quad does not exists/)) {
-      //     // console.log('Found existing quad in: ', quads);
-      //     return;
-      //   }
-      //   throw e;
-      // }
-      break;
+      // case 'delete':
+      //   await Helpers.deleteQuads(diff);
+      //   // docs = Helpers.quadsToDocs(differenceBy(existingQuads, diff, quadIdentity));
+      // break;
     }
 
     console.log('Quads processed. Sending updated doc(s)...');
 
-    await Promise.all(docs.map(data => send({ action, key: data['@id'], data })));
+    await send({ action, key: data['@id'], data });
+    // await Promise.all(docs.map(data => send({ action, key: data['@id'], data })));
     return;
   };
 

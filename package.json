@@ -47,11 +47,11 @@
     "@types/p-queue": "^1.1.0",
     "cayley": "^0.2.1",
     "dotenv": "^4.0.0",
-    "feedbackfruits-knowledge-engine": "github:feedbackfruits/feedbackfruits-knowledge-engine#semver:^1.1.0",
+    "feedbackfruits-knowledge-engine": "github:feedbackfruits/feedbackfruits-knowledge-engine#^1.2.0",
     "isuri": "^2.0.3",
     "jsonld": "^0.4.12",
     "lodash": "^4.17.4",
-    "memux": "github:knowledge-express/memux#semver:~0.4.0",
+    "memux": "github:knowledge-express/memux#~0.4.2",
     "n3": "^0.11.1",
     "node-fetch": "^1.7.2",
     "p-queue": "^0.2.0",
@@ -72,6 +72,6 @@
   },
   "engines": {
     "node": ">= 8",
-    "npm": ">= 5"
+    "npm": "5.7.1"
   }
 }
