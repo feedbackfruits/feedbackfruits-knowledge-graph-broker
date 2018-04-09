@@ -1,4 +1,5 @@
-import { Quad } from 'feedbackfruits-knowledge-engine';
+import { Quad, Doc } from 'feedbackfruits-knowledge-engine';
+export declare function existingQuadsForDoc(doc: Doc): Promise<Quad[]>;
 export declare function getQuads(subject: any): Promise<Quad[]>;
 export declare function writeQuads(quads: Quad[]): any;
 export declare function deleteQuads(quads: Quad[]): any;
