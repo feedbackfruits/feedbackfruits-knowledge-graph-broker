@@ -3418,13 +3418,13 @@ p-locate@^2.0.0:
   dependencies:
     p-limit "^1.1.0"
 
-p-queue@^0.2.0:
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/p-queue/-/p-queue-0.2.0.tgz#10286f06123e102ff422c1a8142e0822ed283dbd"
-
 p-queue@^1.1.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/p-queue/-/p-queue-1.2.0.tgz#639cb8b07270c15b71d7a6446a8e30414f3c96d1"
+
+p-queue@^2.4.0:
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/p-queue/-/p-queue-2.4.0.tgz#6a64eee8923abac7d7daa3c23f284abb3c0ca5aa"
 
 p-try@^1.0.0:
   version "1.0.0"

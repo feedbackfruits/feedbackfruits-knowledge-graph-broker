@@ -2,6 +2,11 @@ import { Quad, Doc, Helpers, Context } from 'feedbackfruits-knowledge-engine';
 import * as jsonld from 'jsonld';
 import * as isuri from 'isuri';
 import fetch from 'node-fetch';
+import * as PQueue from 'p-queue';
+
+import * as Config from './config';
+
+const queue = new PQueue({ concurrency: Config.CONCURRENCY });
 
 import { CAYLEY_ADDRESS } from './config';
 
@@ -35,7 +40,7 @@ export async function getQuads(subject): Promise<Quad[]> {
   const url = `${CAYLEY_ADDRESS}/api/v1/query/gizmo`;
   // console.log('Fetching from url:', url, fetch.toString());
 
-  return fetch(url, {
+  return queue.add<Quad[]>( () => fetch(url, {
     method: 'post',
     body: query
   })
@@ -47,6 +52,7 @@ export async function getQuads(subject): Promise<Quad[]> {
         console.log('Returning resulting quads:', result);
         return (result || []) as Quad[];
       })
+  );
 }
 
 export function writeQuads(quads: Quad[]) {
