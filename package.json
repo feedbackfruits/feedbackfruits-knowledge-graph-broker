@@ -54,7 +54,7 @@
     "memux": "github:knowledge-express/memux#~0.4.2",
     "n3": "^0.11.1",
     "node-fetch": "^1.7.2",
-    "p-queue": "^0.2.0",
+    "p-queue": "^2.4.0",
     "pm2": "^2.1.5",
     "rxjs": "^5.4.3",
     "typescript": "^2.4.2"
