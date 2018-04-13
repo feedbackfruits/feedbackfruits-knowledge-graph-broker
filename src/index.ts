@@ -25,17 +25,9 @@ async function init({ name }: BrokerConfig) {
     if (!isOperation(operation)) throw new Error();
     const { action, data } = operation;
 
-    let existingQuads, quads, diff;
-    try {
-      existingQuads = await Helpers.existingQuadsForDoc(data);
-      quads = await Doc.toQuads(data);
-      diff = differenceBy(unionBy(quads, existingQuads, quadIdentity), existingQuads, quadIdentity);
-    } catch(e) {
-      console.log('An error occured while processing:', JSON.stringify(operation));
-      console.error(e);
-      return;
-      // throw e;
-    }
+    const existingQuads = await Helpers.existingQuadsForDoc(data);
+    const quads = await Doc.toQuads(data);
+    const diff = differenceBy(unionBy(quads, existingQuads, quadIdentity), existingQuads, quadIdentity);
 
     // console.log('Processing quads:', action, data, quads);
     console.log('Processing diff:', diff);
