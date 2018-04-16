@@ -30,34 +30,35 @@ async function init({ name }: BrokerConfig) {
       existingQuads = await Helpers.existingQuadsForDoc(data);
       quads = await Doc.toQuads(data);
       diff = differenceBy(unionBy(quads, existingQuads, quadIdentity), existingQuads, quadIdentity);
+
+      // console.log('Processing quads:', action, data, quads);
+      console.log('Processing diff:', diff);
+
+      if (diff.length === 0) return;
+
+      let docs;
+      switch(action) {
+        case 'write':
+          await Helpers.writeQuads(diff);
+          // docs = Helpers.quadsToDocs(unionBy(existingQuads, diff, quadIdentity));
+        break;
+        // case 'delete':
+        //   await Helpers.deleteQuads(diff);
+        //   // docs = Helpers.quadsToDocs(differenceBy(existingQuads, diff, quadIdentity));
+        // break;
+      }
+
+      console.log('Quads processed. Sending updated doc(s)...');
+
+      await send({ action, key: data['@id'], data });
+      // await Promise.all(docs.map(data => send({ action, key: data['@id'], data })));
+      return;
     } catch(e) {
       console.log('ERROR! Skipping doc.');
       console.error(e)
       return;
     }
 
-    // console.log('Processing quads:', action, data, quads);
-    console.log('Processing diff:', diff);
-
-    if (diff.length === 0) return;
-
-    let docs;
-    switch(action) {
-      case 'write':
-        await Helpers.writeQuads(diff);
-        // docs = Helpers.quadsToDocs(unionBy(existingQuads, diff, quadIdentity));
-      break;
-      // case 'delete':
-      //   await Helpers.deleteQuads(diff);
-      //   // docs = Helpers.quadsToDocs(differenceBy(existingQuads, diff, quadIdentity));
-      // break;
-    }
-
-    console.log('Quads processed. Sending updated doc(s)...');
-
-    await send({ action, key: data['@id'], data });
-    // await Promise.all(docs.map(data => send({ action, key: data['@id'], data })));
-    return;
   };
 
   return Annotator({
