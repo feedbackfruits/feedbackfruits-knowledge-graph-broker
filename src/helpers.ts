@@ -10,11 +10,23 @@ const queue = new PQueue({ concurrency: Config.CONCURRENCY });
 
 import { CAYLEY_ADDRESS } from './config';
 
-export async function existingQuadsForDoc(doc: Doc) {
+export function deduplicateQuads(quads: Quad[]): Quad[] {
+  const indexed = quads.reduce((memo, quad) => {
+    const hash = JSON.stringify(quad);
+
+    memo[hash] = quad;
+
+    return memo;
+  }, {});
+
+  return Object.values(indexed);
+}
+
+export async function existingQuadsForDoc(doc: Doc): Promise<Quad[]> {
   const flattened = await Doc.flatten(doc, Context.context);
   const ids = flattened.map(doc => doc["@id"]);
   const quadss = await Promise.all(ids.map(getQuads));
-  return quadss.reduce((memo, quads) => [ ...memo, ...quads ], []);
+  return deduplicateQuads(quadss.reduce((memo, quads) => [ ...memo, ...quads ], []));
 }
 
 export async function getQuads(subject): Promise<Quad[]> {
