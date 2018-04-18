@@ -16,8 +16,9 @@ export type BrokerConfig = {
 
 export type SendFn = (operation: Operation<Doc>) => Promise<void>;
 
-function quadIdentity({ label, subject, predicate, object }) {
-  return `${label}: ${subject} ${predicate} ${object}`;
+function quadIdentity(quad) {
+  return JSON.stringify(quad);
+  // return `${label}: ${subject} ${predicate} ${object}`;
 }
 
 async function init({ name }: BrokerConfig) {
@@ -28,13 +29,11 @@ async function init({ name }: BrokerConfig) {
     let existingQuads, quads, diff;
     try {
       existingQuads = await Helpers.existingQuadsForDoc(data);
-      quads = await Doc.toQuads(data);
-      diff = differenceBy(unionBy(quads, existingQuads, quadIdentity), existingQuads, quadIdentity);
-
-      // console.log('Processing quads:', action, data, quads);
-      console.log('Processing diff:', diff);
+      quads = Helpers.deduplicateQuads(await Doc.toQuads(data));
+      diff = Helpers.deduplicateQuads(differenceBy(unionBy(quads, existingQuads, quadIdentity), existingQuads, quadIdentity));
 
       if (diff.length === 0) return;
+      console.log('Processing diff:', diff);
 
       let docs;
       switch(action) {
