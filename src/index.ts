@@ -1,5 +1,5 @@
 import { Operation, isOperation } from 'memux';
-import { Annotator, Doc } from 'feedbackfruits-knowledge-engine';
+import { Annotator, Doc, Quad } from 'feedbackfruits-knowledge-engine';
 
 const Cayley = require('cayley');
 const jsonld = require('jsonld');
@@ -55,6 +55,10 @@ async function init({ name }: BrokerConfig) {
       return;
     } catch(e) {
       console.log('ERROR! Skipping doc.');
+      console.log('Printing nquads:');
+      const quads = await Doc.toQuads(data);
+      const nquads = Quad.toNQuads(quads);
+      console.log(nquads);
       console.error(e)
       return;
     }
