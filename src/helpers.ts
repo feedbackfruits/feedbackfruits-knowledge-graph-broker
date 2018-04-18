@@ -29,6 +29,33 @@ export async function existingQuadsForDoc(doc: Doc): Promise<Quad[]> {
   return deduplicateQuads(quadss.reduce((memo, quads) => [ ...memo, ...quads ], []));
 }
 
+export async function quadExists(quad: Quad): Promise<boolean> {
+  const { subject, predicate, object, label } = quad;
+  const query = `
+  g.V("<${subject}>").Has("<${predicate}>", ${Helpers.encodeRDF(object)}).All();
+  	`;
+
+  console.log('Quering to check if quad exists with:', query);
+
+  const url = `${CAYLEY_ADDRESS}/api/v1/query/gizmo`;
+  console.log('Fetching from url:', url);
+
+  return queue.add<boolean>( () => fetch(url, {
+    method: 'post',
+    body: query
+  })
+  .then(res => {
+    return res.json();
+  })
+  .then(({ result }) => {
+    console.log('Got result:', result);
+    return result instanceof Array &&
+      result.length === 1 &&
+      typeof result[0]  === "object" &&
+      result[0].id === Helpers.iriify(subject);
+  }));
+}
+
 export async function getQuads(subject): Promise<Quad[]> {
   console.log('Getting doc:', subject);
   const query = `
@@ -61,10 +88,9 @@ export async function getQuads(subject): Promise<Quad[]> {
     return res.json();
   })
   .then(({ result }) => {
-        console.log('Returning resulting quads:', result);
-        return (result || []) as Quad[];
-      })
-  );
+    console.log('Returning resulting quads:', result);
+    return (result || []) as Quad[];
+  }));
 }
 
 export function writeQuads(quads: Quad[]) {
