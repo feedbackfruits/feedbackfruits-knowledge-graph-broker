@@ -8,3 +8,6 @@
 <http://academic.microsoft.com/#/detail/169654258> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://academic.microsoft.com/FieldOfStudy> .
 <http://academic.microsoft.com/#/detail/169654258> <http://schema.org/name> <http://academic.microsoft.com/FieldOfStudy> .
 <http://academic.microsoft.com/#/detail/169654258> <http://schema.org/sameAs> <http://dbpedia.org/resource/Number_theory> .
+
+# Dubious things
+<https://video.google.com/timedtext?v=2Op3QLzMgSY&lang=en#UDM0MTUuMTlTLVAxLjdT> <http://schema.org/text> "\"you know that these languages have things like \"for\"" .
