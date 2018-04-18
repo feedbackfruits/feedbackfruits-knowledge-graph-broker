@@ -1789,9 +1789,9 @@ feedbackfruits-knowledge-context@feedbackfruits/feedbackfruits-knowledge-context
     tslint "^5.5.0"
     typescript "^2.4.1"
 
-"feedbackfruits-knowledge-engine@github:feedbackfruits/feedbackfruits-knowledge-engine#^1.2.2":
-  version "1.2.2"
-  resolved "https://codeload.github.com/feedbackfruits/feedbackfruits-knowledge-engine/tar.gz/f9b3b353cc0836cb3e39f9428698658cb152bf49"
+"feedbackfruits-knowledge-engine@github:feedbackfruits/feedbackfruits-knowledge-engine#^1.2.3":
+  version "1.2.3"
+  resolved "https://codeload.github.com/feedbackfruits/feedbackfruits-knowledge-engine/tar.gz/a2662b080868d3e571e31895501d7b7b574dc605"
   dependencies:
     "@types/n3" "^0.0.3"
     "@types/node" "^8.0.14"
@@ -1801,6 +1801,8 @@ feedbackfruits-knowledge-context@feedbackfruits/feedbackfruits-knowledge-context
     jsonld "^0.5.18"
     memux "^0.4.2"
     n3 "^0.11.2"
+    rdf-canonize "^0.2.3"
+    rdf-nx-parser "^1.0.3"
     tslint "^5.5.0"
     typescript "^2.4.1"
 
@@ -3783,7 +3785,7 @@ rc@^1.0.1, rc@^1.1.6, rc@^1.1.7:
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
 
-rdf-canonize@^0.2.1:
+rdf-canonize@^0.2.1, rdf-canonize@^0.2.3:
   version "0.2.3"
   resolved "https://registry.yarnpkg.com/rdf-canonize/-/rdf-canonize-0.2.3.tgz#c89f3cd5823bb430e0060d714125ccc8febdf6c9"
   dependencies:
@@ -3791,6 +3793,10 @@ rdf-canonize@^0.2.1:
     nan "^2.7.0"
     node-forge "^0.7.1"
     semver "^5.4.1"
+
+rdf-nx-parser@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/rdf-nx-parser/-/rdf-nx-parser-1.0.3.tgz#a9daf6de4d6d87f193d3296e731f4954854de727"
 
 read-pkg-up@^1.0.1:
   version "1.0.1"
