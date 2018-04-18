@@ -1789,9 +1789,9 @@ feedbackfruits-knowledge-context@feedbackfruits/feedbackfruits-knowledge-context
     tslint "^5.5.0"
     typescript "^2.4.1"
 
-"feedbackfruits-knowledge-engine@github:feedbackfruits/feedbackfruits-knowledge-engine#^1.2.1":
-  version "1.2.1"
-  resolved "https://codeload.github.com/feedbackfruits/feedbackfruits-knowledge-engine/tar.gz/25dc9408d0decf29fb0a06579d1b0313e2aa0b45"
+"feedbackfruits-knowledge-engine@github:feedbackfruits/feedbackfruits-knowledge-engine#^1.2.2":
+  version "1.2.2"
+  resolved "https://codeload.github.com/feedbackfruits/feedbackfruits-knowledge-engine/tar.gz/f9b3b353cc0836cb3e39f9428698658cb152bf49"
   dependencies:
     "@types/n3" "^0.0.3"
     "@types/node" "^8.0.14"
