@@ -61,8 +61,9 @@ async function init({ name }: BrokerConfig) {
       quads = await Doc.toQuads(data);
       await Promise.all(quads.map(async quad => {
         const exists = await Helpers.quadExists(quad);
-        if (!exists) {
+        if (exists) {
           console.log('Errored on quad:', JSON.stringify(quad));
+          process.exit(1);
           // throw new Error('Existing quad: ' + JSON.stringify(quad));
         }
       }));
