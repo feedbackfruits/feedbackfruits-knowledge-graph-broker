@@ -17,7 +17,9 @@ export type BrokerConfig = {
 export type SendFn = (operation: Operation<Doc>) => Promise<void>;
 
 function quadIdentity(quad) {
-  return JSON.stringify(quad);
+  // return JSON.stringify(quad);
+  const { subject, predicate, object, label } = quad;
+  return Quad.toNQuads([ quad ]);
   // return `${label}: ${subject} ${predicate} ${object}`;
 }
 
