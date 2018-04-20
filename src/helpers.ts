@@ -145,18 +145,34 @@ export async function getQuads(subject): Promise<Quad[]> {
   });
 }
 
-export function writeQuads(quads: Quad[]) {
-  const nquads = Quad.toNQuads(quads);
-  // console.log('Writing p-quads:', nquads);
-  return fetch(`${CAYLEY_ADDRESS}/api/v2/write`, {
-    method: 'post',
-    body: nquads
-  })
-  .then(response => response.json())
-  .then(result => {
-    if ('error' in result) throw new Error(result.error);
-    return result;
-  });
+export function splitArray(array: any[], chunkSize: number = 100): any[][] {
+  const res = [];
+
+  var i;
+  for (i = 0; i < array.length; i += chunkSize) {
+    res.push(array.slice(i, i + chunkSize));
+  }
+
+  return res;
+}
+
+export async function writeQuads(quads: Quad[]) {
+  const chunked = splitArray(quads, 1000);
+
+  return Promise.all(chunked.map(async chunk => {
+    const nquads = Quad.toNQuads(quads);
+    // console.log('Writing p-quads:', nquads);
+
+    return queue.add<Quad[]>( async () => {
+      const response = await fetch(`${CAYLEY_ADDRESS}/api/v2/write`, {
+        method: 'post',
+        body: nquads
+      })
+      const { result, error } = await response.json();
+      if (error) throw new Error(error);
+      return result;
+    });
+  }));
 }
 
 export function deleteQuads(quads: Quad[]) {

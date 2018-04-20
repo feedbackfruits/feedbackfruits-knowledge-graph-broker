@@ -5,5 +5,6 @@ export declare function existingQuadsForDoc(doc: Doc): Promise<Quad[]>;
 export declare function nodesExists(subjects: string[]): Promise<boolean[]>;
 export declare function quadExists(quad: Quad): Promise<boolean>;
 export declare function getQuads(subject: any): Promise<Quad[]>;
-export declare function writeQuads(quads: Quad[]): any;
+export declare function splitArray(array: any[], chunkSize?: number): any[][];
+export declare function writeQuads(quads: Quad[]): Promise<Quad[][]>;
 export declare function deleteQuads(quads: Quad[]): any;
