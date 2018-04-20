@@ -70,13 +70,14 @@ export async function nodesExists(subjects: string[]): Promise<boolean[]> {
 
 export async function quadExists(quad: Quad): Promise<boolean> {
   const { subject, predicate, object, label } = quad;
+  const encodedObject = Helpers.isURI(object) ? JSON.stringify(Helpers.iriify(object)) : Helpers.encodeRDF(object);
   const query = `
-  g.V("<${subject}>").Has("<${predicate}>", ${Helpers.encodeRDF(object)}).All();
+  g.V("<${subject}>").Has("<${predicate}>", ${encodedObject}).All();
   	`;
 
   // console.log('Quering to check if quad exists with:', query);
 
-  const url = `${CAYLEY_ADDRESS}/api/v1/query/gizmo`;
+  const url = `${CAYLEY_ADDRESS}/api/v1/query/gizmo?limit=10000`;
   // console.log('Fetching from url:', url);
 
   return queue.add<boolean>( () => fetch(url, {
@@ -86,7 +87,8 @@ export async function quadExists(quad: Quad): Promise<boolean> {
   .then(res => {
     return res.json();
   })
-  .then(({ result }) => {
+  .then(({ result, error }) => {
+    if (error) throw new Error(error);
     // console.log('Got result:', result);
     return result instanceof Array &&
       result.length === 1 &&
@@ -115,7 +117,7 @@ export async function getQuads(subject): Promise<Quad[]> {
           });
       })`;
 
-  const url = `${CAYLEY_ADDRESS}/api/v1/query/gizmo`;
+  const url = `${CAYLEY_ADDRESS}/api/v1/query/gizmo?limit=10000`;
   // console.log('Fetching from url:', url, fetch.toString());
 
   return queue.add<Quad[]>( async () => {
@@ -126,7 +128,7 @@ export async function getQuads(subject): Promise<Quad[]> {
     const { result } = await response.json();
     const deiriified = (<Quad[]>(result || [])).map(quad => {
       const { subject, predicate, object, label } = quad;
-      return { subject: Helpers.decodeIRI(subject), predicate: Helpers.decodeIRI(predicate), object, label };
+      return { subject: Helpers.decodeIRI(subject), predicate: Helpers.decodeIRI(predicate), object: Helpers.decodeIRI(object), label };
     });
 
     return deiriified;
