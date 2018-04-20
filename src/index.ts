@@ -58,17 +58,17 @@ async function init({ name }: BrokerConfig) {
       console.log('ERROR! Skipping doc.');
       console.error(e)
 
-      console.log('Tracing duplicate quad:');
-      let quads;
-      quads = await Doc.toQuads(data);
-      await Promise.all(quads.map(async quad => {
-        const exists = await Helpers.quadExists(quad);
-        if (exists) {
-          console.log('Errored on quad:', JSON.stringify(quad));
-          process.exit(1);
-          // throw new Error('Existing quad: ' + JSON.stringify(quad));
-        }
-      }));
+      // console.log('Tracing duplicate quad:');
+      // let quads;
+      // quads = await Doc.toQuads(data);
+      // await Promise.all(quads.map(async quad => {
+      //   const exists = await Helpers.quadExists(quad);
+      //   if (exists) {
+      //     console.log('Errored on quad:', JSON.stringify(quad));
+      //     process.exit(1);
+      //     // throw new Error('Existing quad: ' + JSON.stringify(quad));
+      //   }
+      // }));
 
       return;
     }

@@ -79,18 +79,19 @@ export async function getQuads(subject): Promise<Quad[]> {
   const url = `${CAYLEY_ADDRESS}/api/v1/query/gizmo`;
   // console.log('Fetching from url:', url, fetch.toString());
 
-  return queue.add<Quad[]>( () => fetch(url, {
-    method: 'post',
-    body: query
-  })
-  .then(res => {
-    // console.log('Got response:', res);
-    return res.json();
-  })
-  .then(({ result }) => {
-    console.log('Returning resulting quads:', result);
-    return (result || []) as Quad[];
-  }));
+  return queue.add<Quad[]>( async () => {
+    const response = await fetch(url, {
+      method: 'post',
+      body: query
+    });
+    const { result } = await response.json();
+    const deiriified = (<Quad[]>(result || [])).map(quad => {
+      const { subject, predicate, object, label } = quad;
+      return { subject: Helpers.decodeIRI(subject), predicate: Helpers.decodeIRI(predicate), object, label };
+    });
+
+    return deiriified;
+  });
 }
 
 export function writeQuads(quads: Quad[]) {
