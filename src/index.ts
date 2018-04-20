@@ -75,21 +75,21 @@ async function init({ name }: BrokerConfig) {
         // quads = Helpers.deduplicateQuads(await Doc.toQuads(data));
         // diff = Helpers.deduplicateQuads(differenceBy(unionBy(quads, existingQuads, quadIdentity), existingQuads, quadIdentity));
 
-        console.log('Tracing existing quads in diff of length: ', diff.length);
-        const existing = await traceExistingQuads(diff);
-        if (existing.length !== 0) {
-          console.log('Errored on quads:', JSON.stringify(existing));
-          console.log('Determined existing quads:', JSON.stringify(existingQuads));
-          process.exit(1);
-        } else {
-          console.log('Something strange is occuring, none of the diff quads seem to exist, but diff processing still failed.');
-          console.log(Quad.toNQuads(diff));
-          const waitingPromise = new Promise((resolve) => {
-            setTimeout(() => resolve(), 20000);
-          });
-          await waitingPromise;
-          process.exit(1);
-        }
+        // console.log('Tracing existing quads in diff of length: ', diff.length);
+        // const existing = await traceExistingQuads(diff);
+        // if (existing.length !== 0) {
+        //   console.log('Errored on quads:', JSON.stringify(existing));
+        //   console.log('Determined existing quads:', JSON.stringify(existingQuads));
+        //   process.exit(1);
+        // } else {
+        //   console.log('Something strange is occuring, none of the diff quads seem to exist, but diff processing still failed.');
+        //   console.log(Quad.toNQuads(diff));
+        //   const waitingPromise = new Promise((resolve) => {
+        //     setTimeout(() => resolve(), 20000);
+        //   });
+        //   await waitingPromise;
+        //   process.exit(1);
+        // }
       }
 
       // console.log('Tracing duplicate quad:');

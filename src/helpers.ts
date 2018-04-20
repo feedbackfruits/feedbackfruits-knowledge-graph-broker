@@ -163,7 +163,7 @@ export async function writeQuads(quads: Quad[]) {
     const nquads = Quad.toNQuads(quads);
     // console.log('Writing p-quads:', nquads);
 
-    return queue.add<Quad[]>( async () => {
+    // return queue.add<Quad[]>( async () => {
       const response = await fetch(`${CAYLEY_ADDRESS}/api/v2/write`, {
         method: 'post',
         body: nquads
@@ -171,7 +171,7 @@ export async function writeQuads(quads: Quad[]) {
       const { result, error } = await response.json();
       if (error) throw new Error(error);
       return result;
-    });
+    // });
   }));
 }
 
