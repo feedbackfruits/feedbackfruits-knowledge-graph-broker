@@ -10,6 +10,16 @@ const queue = new PQueue({ concurrency: Config.WEB_CONCURRENCY });
 
 import { CAYLEY_ADDRESS } from './config';
 
+export function quickDiff(existing: Quad[], other: Quad[]): Quad[] {
+  const existingIndex = existing.reduce((memo, q) => ({ ...memo, [Quad.toNQuads([q])]: true }), {});
+  // console.log('Index:', JSON.stringify(existingIndex));
+  return other.filter(q => {
+    const exists = Quad.toNQuads([q]) in existingIndex;
+    // console.log('Quad exists?:', exists);
+    return !exists;
+  });
+}
+
 export function deduplicateQuads(quads: Quad[]): Quad[] {
   const indexed = quads.reduce((memo, quad) => {
     const hash = JSON.stringify(quad);
@@ -26,15 +36,15 @@ export async function existingQuadsForDoc(doc: Doc): Promise<Quad[]> {
   const flattened = await Doc.flatten(doc, Context.context);
   const ids = flattened.map(doc => doc["@id"]);
   const existences = await nodesExists(ids);
-  console.log(`Filtering ${ids.length} ids by ${existences.length} existences.`);
+  // console.log(`Filtering ${ids.length} ids by ${existences.length} existences.`);
   const existingIds = ids.filter((id, index) => existences[index]);
-  console.log('Getting quads for existing ids:', JSON.stringify(existingIds));
+  // console.log('Getting quads for existing ids:', JSON.stringify(existingIds));
   const quadss = await Promise.all(existingIds.map(getQuads));
   return deduplicateQuads(quadss.reduce((memo, quads) => [ ...memo, ...quads ], []));
 }
 
 export async function nodesExists(subjects: string[]): Promise<boolean[]> {
-  console.log('Checking existence of:', JSON.stringify(subjects));
+  // console.log('Checking existence of:', JSON.stringify(subjects));
   const iriified = subjects.map(Helpers.iriify);
   const stringified = iriified.map(iri => JSON.stringify(iri));
   const query = `
@@ -49,7 +59,7 @@ export async function nodesExists(subjects: string[]): Promise<boolean[]> {
     })
   `;
 
-  console.log('Quering to check existence with:', query);
+  // console.log('Quering to check existence with:', query);
 
   const url = `${CAYLEY_ADDRESS}/api/v1/query/gizmo?limit=10000`;
   // console.log('Fetching from url:', url);

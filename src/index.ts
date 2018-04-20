@@ -43,7 +43,7 @@ async function init({ name }: BrokerConfig) {
       console.log(`${existingQuads.length} existing quads related to the data.`);
       quads = Helpers.deduplicateQuads(await Doc.toQuads(data));
       console.log(`${quads.length} quads in total related to the data.`);
-      diff = Helpers.deduplicateQuads(differenceBy(unionBy(quads, existingQuads, quadIdentity), existingQuads, quadIdentity));
+      diff = Helpers.deduplicateQuads(Helpers.quickDiff(existingQuads, quads));
       console.log(`${diff.length} quads in diff.`);
 
       if (diff.length === 0) return;
