@@ -12,6 +12,7 @@ const {
 } = process.env;
 
 const CONCURRENCY = parseInt(process.env.CONCURRENCY) || 5;
+const WEB_CONCURRENCY = parseInt(process.env.WEB_CONCURRENCY) || 50;
 
 export {
   NAME,
@@ -20,6 +21,7 @@ export {
   INPUT_TOPIC,
   OUTPUT_TOPIC,
   CONCURRENCY,
+  WEB_CONCURRENCY,
   KAFKA_PRIVATE_KEY,
   KAFKA_CERT,
   KAFKA_CA,

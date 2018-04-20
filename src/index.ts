@@ -111,7 +111,7 @@ async function init({ name }: BrokerConfig) {
   return Annotator({
     name,
     receive,
-    customConfig: { ...Config, CONCURRENCY: 1 }
+    customConfig: Config
   });
 
 }

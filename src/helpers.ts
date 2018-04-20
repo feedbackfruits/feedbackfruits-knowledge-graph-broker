@@ -6,7 +6,7 @@ import * as PQueue from 'p-queue';
 
 import * as Config from './config';
 
-const queue = new PQueue({ concurrency: Config.CONCURRENCY });
+const queue = new PQueue({ concurrency: Config.WEB_CONCURRENCY });
 
 import { CAYLEY_ADDRESS } from './config';
 
