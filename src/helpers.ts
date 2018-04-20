@@ -25,8 +25,47 @@ export function deduplicateQuads(quads: Quad[]): Quad[] {
 export async function existingQuadsForDoc(doc: Doc): Promise<Quad[]> {
   const flattened = await Doc.flatten(doc, Context.context);
   const ids = flattened.map(doc => doc["@id"]);
-  const quadss = await Promise.all(ids.map(getQuads));
+  const existences = await nodesExists(ids);
+  console.log(`Filtering ${ids.length} ids by ${existences.length} existences.`);
+  const existingIds = ids.filter((id, index) => existences[index]);
+  console.log('Getting quads for existing ids:', JSON.stringify(existingIds));
+  const quadss = await Promise.all(existingIds.map(getQuads));
   return deduplicateQuads(quadss.reduce((memo, quads) => [ ...memo, ...quads ], []));
+}
+
+export async function nodesExists(subjects: string[]): Promise<boolean[]> {
+  console.log('Checking existence of:', JSON.stringify(subjects));
+  const iriified = subjects.map(Helpers.iriify);
+  const stringified = iriified.map(iri => JSON.stringify(iri));
+  const query = `
+    subjects = ${JSON.stringify(iriified)}
+    subjects.forEach(function(x) {
+      res = {}
+      res[x] = false
+      g.V(x).ForEach(function(y) {
+      	res[x] = true
+      })
+      g.Emit(res)
+    })
+  `;
+
+  console.log('Quering to check existence with:', query);
+
+  const url = `${CAYLEY_ADDRESS}/api/v1/query/gizmo?limit=10000`;
+  // console.log('Fetching from url:', url);
+
+  return queue.add<boolean[]>( async () => {
+    const response = await fetch(url, {
+      method: 'post',
+      body: query
+    });
+    const { result } = await response.json();
+    return result.map(res => {
+      return Object.keys(res || {}).map(key => {
+        return res[key];
+      })[0];
+    })
+  });
 }
 
 export async function quadExists(quad: Quad): Promise<boolean> {

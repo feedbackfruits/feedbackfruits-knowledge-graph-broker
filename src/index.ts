@@ -38,9 +38,13 @@ async function init({ name }: BrokerConfig) {
 
     let existingQuads, quads, diff;
     try {
+      console.log('Processing data...');
       existingQuads = await Helpers.existingQuadsForDoc(data);
+      console.log(`${existingQuads.length} existing quads related to the data.`);
       quads = Helpers.deduplicateQuads(await Doc.toQuads(data));
+      console.log(`${quads.length} quads in total related to the data.`);
       diff = Helpers.deduplicateQuads(differenceBy(unionBy(quads, existingQuads, quadIdentity), existingQuads, quadIdentity));
+      console.log(`${diff.length} quads in diff.`);
 
       if (diff.length === 0) return;
       console.log('Processing diff:', diff);
@@ -76,6 +80,14 @@ async function init({ name }: BrokerConfig) {
         if (existing.length !== 0) {
           console.log('Errored on quads:', JSON.stringify(existing));
           console.log('Determined existing quads:', JSON.stringify(existingQuads));
+          process.exit(1);
+        } else {
+          console.log('Something strange is occuring, none of the diff quads seem to exist, but diff processing still failed.');
+          console.log(Quad.toNQuads(diff));
+          const waitingPromise = new Promise((resolve) => {
+            setTimeout(() => resolve(), 20000);
+          });
+          await waitingPromise;
           process.exit(1);
         }
       }
