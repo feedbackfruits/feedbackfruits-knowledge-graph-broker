@@ -35,10 +35,10 @@ export async function quadExists(quad: Quad): Promise<boolean> {
   g.V("<${subject}>").Has("<${predicate}>", ${Helpers.encodeRDF(object)}).All();
   	`;
 
-  console.log('Quering to check if quad exists with:', query);
+  // console.log('Quering to check if quad exists with:', query);
 
   const url = `${CAYLEY_ADDRESS}/api/v1/query/gizmo`;
-  console.log('Fetching from url:', url);
+  // console.log('Fetching from url:', url);
 
   return queue.add<boolean>( () => fetch(url, {
     method: 'post',
@@ -48,7 +48,7 @@ export async function quadExists(quad: Quad): Promise<boolean> {
     return res.json();
   })
   .then(({ result }) => {
-    console.log('Got result:', result);
+    // console.log('Got result:', result);
     return result instanceof Array &&
       result.length === 1 &&
       typeof result[0]  === "object" &&
@@ -57,7 +57,7 @@ export async function quadExists(quad: Quad): Promise<boolean> {
 }
 
 export async function getQuads(subject): Promise<Quad[]> {
-  console.log('Getting doc:', subject);
+  // console.log('Getting doc:', subject);
   const query = `
   var subject = "<${subject}>";
   g.V(subject)
@@ -96,7 +96,7 @@ export async function getQuads(subject): Promise<Quad[]> {
 
 export function writeQuads(quads: Quad[]) {
   const nquads = Quad.toNQuads(quads);
-  console.log('Writing p-quads:', nquads);
+  // console.log('Writing p-quads:', nquads);
   return fetch(`${CAYLEY_ADDRESS}/api/v2/write`, {
     method: 'post',
     body: nquads
@@ -110,7 +110,7 @@ export function writeQuads(quads: Quad[]) {
 
 export function deleteQuads(quads: Quad[]) {
   const nquads = Quad.toNQuads(quads);
-  console.log('Deleting p-quads:', nquads);
+  // console.log('Deleting p-quads:', nquads);
   return fetch(`${CAYLEY_ADDRESS}/api/v2/delete`, {
     method: 'post',
     body: nquads

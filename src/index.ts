@@ -11,10 +11,18 @@ import * as Helpers from './helpers';
 const cayley = Cayley(Config.CAYLEY_ADDRESS);
 
 export type BrokerConfig = {
-  name: string
+  name: string,
 };
 
 export type SendFn = (operation: Operation<Doc>) => Promise<void>;
+
+async function traceExistingQuads(quads: Quad[]): Promise<Quad[]> {
+  return quads.reduce(async (memo, quad) => {
+    const exists = await Helpers.quadExists(quad);
+    if (exists) return [ ...(await memo), quad];
+    return memo;
+  }, Promise.resolve(<Quad[]>[]));
+}
 
 function quadIdentity(quad) {
   // return JSON.stringify(quad);
@@ -58,9 +66,22 @@ async function init({ name }: BrokerConfig) {
       console.log('ERROR! Skipping doc.');
       console.error(e)
 
+      if (e.message.match(/quad exists/i)) {
+        // existingQuads = await Helpers.existingQuadsForDoc(data);
+        // quads = Helpers.deduplicateQuads(await Doc.toQuads(data));
+        // diff = Helpers.deduplicateQuads(differenceBy(unionBy(quads, existingQuads, quadIdentity), existingQuads, quadIdentity));
+
+        console.log('Tracing existing quads in diff of length: ', diff.length);
+        const existing = await traceExistingQuads(diff);
+        if (existing.length !== 0) {
+          console.log('Errored on quads:', JSON.stringify(existing));
+          console.log('Determined existing quads:', JSON.stringify(existingQuads));
+          process.exit(1);
+        }
+      }
+
       // console.log('Tracing duplicate quad:');
       // let quads;
-      // quads = await Doc.toQuads(data);
       // await Promise.all(quads.map(async quad => {
       //   const exists = await Helpers.quadExists(quad);
       //   if (exists) {
@@ -78,7 +99,7 @@ async function init({ name }: BrokerConfig) {
   return Annotator({
     name,
     receive,
-    customConfig: Config
+    customConfig: { ...Config, CONCURRENCY: 1 }
   });
 
 }
@@ -90,7 +111,7 @@ declare const require: any;
 if (require.main === module) {
   console.log("Running as script.");
   init({
-    name: Config.NAME,
+    name: Config.NAME
   }).catch((err) => {
     console.error(err);
     throw err;
