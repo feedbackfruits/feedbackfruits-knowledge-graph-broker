@@ -93,7 +93,7 @@ async function init({ name }: BrokerConfig) {
 
     const diffLength = diffLengths.reduce((memo, length) => memo + length, 0);
     console.log('Total diffLength:', diffLength);
-    if (diffLength === 0) return;
+    if (!(diffLength !== 0)) return;
 
     console.log('Quads processed. Sending updated doc(s)...');
 
