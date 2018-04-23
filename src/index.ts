@@ -36,63 +36,70 @@ async function init({ name }: BrokerConfig) {
     if (!isOperation(operation)) throw new Error();
     const { action, data } = operation;
 
-    let existingQuads, quads, diff;
-    try {
-      console.log('Processing data...');
-      existingQuads = await Helpers.existingQuadsForDoc(data);
-      console.log(`${existingQuads.length} existing quads related to the data.`);
-      quads = Helpers.deduplicateQuads(await Doc.toQuads(data));
-      console.log(`${quads.length} quads in total related to the data.`);
-      diff = Helpers.deduplicateQuads(Helpers.quickDiff(existingQuads, quads));
-      console.log(`${diff.length} quads in diff.`);
+    const flattened = await Doc.flatten(data, Context.context);
+    const diffLengths = await Promise.all(flattened.map(async doc => {
+      let existingQuads, quads, diff;
+      try {
+        console.log('Processing data...');
+        existingQuads = await Helpers.existingQuadsForDoc(data);
+        console.log(`${existingQuads.length} existing quads related to the data.`);
+        quads = Helpers.deduplicateQuads(await Doc.toQuads(data));
+        console.log(`${quads.length} quads in total related to the data.`);
+        diff = Helpers.deduplicateQuads(Helpers.quickDiff(existingQuads, quads));
+        console.log(`${diff.length} quads in diff.`);
 
-      if (diff.length === 0) return;
-      console.log('Processing diff:', diff);
+        if (diff.length === 0) return diff.length;
+        console.log('Processing diff:', diff);
 
-      let docs;
-      switch(action) {
-        case 'write':
-          await Helpers.writeQuads(diff);
-          // docs = Helpers.quadsToDocs(unionBy(existingQuads, diff, quadIdentity));
-        break;
-        // case 'delete':
-        //   await Helpers.deleteQuads(diff);
-        //   // docs = Helpers.quadsToDocs(differenceBy(existingQuads, diff, quadIdentity));
-        // break;
-      }
-
-      console.log('Quads processed. Sending updated doc(s)...');
-
-      await send({ action, key: data['@id'], data });
-      // await Promise.all(docs.map(data => send({ action, key: data['@id'], data })));
-      return;
-    } catch(e) {
-      console.log('ERROR! Skipping doc.');
-      console.error(e)
-
-      if (e.message.match(/quad exists/i)) {
-        // existingQuads = await Helpers.existingQuadsForDoc(data);
-        // quads = Helpers.deduplicateQuads(await Doc.toQuads(data));
-        // diff = Helpers.deduplicateQuads(differenceBy(unionBy(quads, existingQuads, quadIdentity), existingQuads, quadIdentity));
-
-        // console.log('Tracing existing quads in diff of length: ', diff.length);
-        // const existing = await traceExistingQuads(diff);
-        // if (existing.length !== 0) {
-        //   console.log('Errored on quads:', JSON.stringify(existing));
-        //   console.log('Determined existing quads:', JSON.stringify(existingQuads));
-        //   process.exit(1);
-        // } else {
-        //   console.log('Something strange is occuring, none of the diff quads seem to exist, but diff processing still failed.');
-        //   console.log(Quad.toNQuads(diff));
-        //   const waitingPromise = new Promise((resolve) => {
-        //     setTimeout(() => resolve(), 20000);
-        //   });
-        //   await waitingPromise;
-        //   process.exit(1);
+        await Helpers.writeQuads(diff);
+        return diff.length;
+        // let docs;
+        // switch(action) {
+        //   case 'write':
+        //   // docs = Helpers.quadsToDocs(unionBy(existingQuads, diff, quadIdentity));
+        //   // break;
+        //   // case 'delete':
+        //   //   await Helpers.deleteQuads(diff);
+        //   //   // docs = Helpers.quadsToDocs(differenceBy(existingQuads, diff, quadIdentity));
+        //   // break;
         // }
-      }
+      } catch(e) {
+        console.log(`ERROR! Skipping doc ${doc["@id"]}.`);
+        console.error(e);
 
-      // console.log('Tracing duplicate quad:');
+        if (e.message.match(/quad exists/i)) {
+          // existingQuads = await Helpers.existingQuadsForDoc(data);
+          // quads = Helpers.deduplicateQuads(await Doc.toQuads(data));
+          // diff = Helpers.deduplicateQuads(differenceBy(unionBy(quads, existingQuads, quadIdentity), existingQuads, quadIdentity));
+
+          // console.log('Tracing existing quads in diff of length: ', diff.length);
+          // const existing = await traceExistingQuads(diff);
+          // if (existing.length !== 0) {
+          //   console.log('Errored on quads:', JSON.stringify(existing));
+          //   console.log('Determined existing quads:', JSON.stringify(existingQuads));
+          //   process.exit(1);
+          // } else {
+          //   console.log('Something strange is occuring, none of the diff quads seem to exist, but diff processing still failed.');
+          //   console.log(Quad.toNQuads(diff));
+          //   const waitingPromise = new Promise((resolve) => {
+          //     setTimeout(() => resolve(), 20000);
+          //   });
+          //   await waitingPromise;
+          //   process.exit(1);
+          // }
+        }
+      }
+    }));
+
+    const diffLength = diffLengths.reduce((memo, length) => memo + length, 0);
+    console.log('Total diffLength:', diffLength);
+    if (diffLength === 0) return;
+
+    console.log('Quads processed. Sending updated doc(s)...');
+
+    await send({ action, key: data['@id'], data });
+      // await Promise.all(docs.map(data => send({ action, key: data['@id'], data })));
+        // console.log('Tracing duplicate quad:');
       // let quads;
       // await Promise.all(quads.map(async quad => {
       //   const exists = await Helpers.quadExists(quad);
@@ -106,7 +113,7 @@ async function init({ name }: BrokerConfig) {
       return;
     }
 
-  };
+  // };
 
   return Annotator({
     name,
