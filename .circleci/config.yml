@@ -8,7 +8,7 @@ jobs:
           NODE_ENV: test
           INPUT_TOPIC: update_requests
           OUTPUT_TOPIC: updates
-      - image: quay.io/cayleygraph/cayley:v0.7.0-alpha
+      - image: quay.io/cayleygraph/cayley:latest
       # - image: feedbackfruits/feedbackfruits-knowledge-graph:latest
       #   auth:
       #     username: $DOCKERHUB_USER

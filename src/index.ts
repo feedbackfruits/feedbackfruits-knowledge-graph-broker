@@ -42,9 +42,9 @@ async function init({ name }: BrokerConfig) {
       try {
         console.log('Processing data...');
         existingQuads = await Helpers.existingQuadsForDoc(data);
-        console.log(`${existingQuads.length} existing quads related to the data.`);
+        console.log(`${existingQuads.length} existing quads related to doc ${doc["@id"]}.`);
         quads = Helpers.deduplicateQuads(await Doc.toQuads(data));
-        console.log(`${quads.length} quads in total related to the data.`);
+        console.log(`${quads.length} quads in total related to doc ${doc["@id"]}.`);
         diff = Helpers.deduplicateQuads(Helpers.quickDiff(existingQuads, quads));
         console.log(`${diff.length} quads in diff.`);
 
