@@ -3,7 +3,7 @@ jobs:
   build:
     working_directory: ~/feedbackfruits-knowledge-graph-broker
     docker:
-      - image: node:latest
+      - image: node:8.5.0
         environment:
           NODE_ENV: test
           INPUT_TOPIC: update_requests
