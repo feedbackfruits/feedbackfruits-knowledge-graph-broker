@@ -89,12 +89,14 @@ async function init({ name }: BrokerConfig) {
           //   process.exit(1);
           // }
         }
+
+        return 0;
       }
     }));
 
-    const diffLength = diffLengths.reduce((memo, length) => memo + length, 0);
+    const diffLength = diffLengths.reduce((memo, length) => memo + (length || 0), 0);
     console.log('Total diffLength:', diffLength);
-    if (!(diffLength !== 0)) return;
+    if (typeof diffLength !== 'number' || diffLength === 0) return;
 
     console.log('Quads processed. Sending updated doc(s)...');
 
