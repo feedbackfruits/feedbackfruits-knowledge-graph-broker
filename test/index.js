@@ -6,6 +6,7 @@ import memux from 'memux';
 import { NAME, KAFKA_ADDRESS, INPUT_TOPIC, OUTPUT_TOPIC } from '../lib/config';
 
 const resource = require('./support/resource');
+const resourceFlatCompact = require('./support/resource-flat-compact');
 
 test('it exists', t => {
   t.not(init, undefined);
@@ -23,8 +24,10 @@ test('it works and deduplicates', async (t) => {
     let count = 0;
     const receive = (message) => {
       console.log('Received message!', message);
-      count++;
-      count === 1 ? _resolve(message) : spy();
+      if ([].concat(message.data["@type"]).find(type => type === "Resource")) {
+        count++;
+        count === 1 ? _resolve(message) : spy();
+      }
     };
 
     const send = await memux({
@@ -51,7 +54,17 @@ test('it works and deduplicates', async (t) => {
     await send(operation);
 
     let result = await resultPromise;
-    t.deepEqual(result, { ...operation, label: NAME });
+    t.deepEqual({ ...result, data: {
+      ...result.data,
+      caption: result.data.caption.sort(),
+      tag: result.data.tag.sort(),
+      annotation: result.data.annotation.sort(),
+    } }, { ...operation, data: {
+      ...resourceFlatCompact,
+      caption: resourceFlatCompact.caption.sort(),
+      tag: resourceFlatCompact.tag.sort(),
+      annotation: resourceFlatCompact.annotation.sort(),
+    }, label: NAME });
 
     await send(operation);
     await waitingPromise;
