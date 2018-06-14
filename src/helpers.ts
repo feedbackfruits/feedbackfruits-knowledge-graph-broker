@@ -61,7 +61,7 @@ export async function nodesExists(subjects: string[]): Promise<boolean[]> {
 
   // console.log('Quering to check existence with:', query);
 
-  const url = `${CAYLEY_ADDRESS}/api/v1/query/gizmo?limit=10000`;
+  const url = `${CAYLEY_ADDRESS}/api/v1/query/gizmo?limit=-1`;
   // console.log('Fetching from url:', url);
 
   return queue.add<boolean[]>( async () => {
@@ -87,7 +87,7 @@ export async function quadExists(quad: Quad): Promise<boolean> {
 
   // console.log('Quering to check if quad exists with:', query);
 
-  const url = `${CAYLEY_ADDRESS}/api/v1/query/gizmo?limit=10000`;
+  const url = `${CAYLEY_ADDRESS}/api/v1/query/gizmo?limit=-1`;
   // console.log('Fetching from url:', url);
 
   return queue.add<boolean>( () => fetch(url, {
@@ -127,7 +127,7 @@ export async function getQuads(subject): Promise<Quad[]> {
           });
       })`;
 
-  const url = `${CAYLEY_ADDRESS}/api/v1/query/gizmo?limit=10000`;
+  const url = `${CAYLEY_ADDRESS}/api/v1/query/gizmo?limit=-1`;
   // console.log('Fetching from url:', url, fetch.toString());
 
   return queue.add<Quad[]>( async () => {

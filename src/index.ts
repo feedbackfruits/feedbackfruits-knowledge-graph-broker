@@ -38,69 +38,34 @@ async function init({ name }: BrokerConfig) {
 
     const flattened = await Doc.flatten(data, Context.context);
     const expanded = await Doc.expand(flattened, Context.context);
+
     const diffLengths = await Promise.all(expanded.map(async doc => {
       let existingQuads, quads, diff;
-      try {
-        console.log('Processing data...');
-        existingQuads = await Helpers.existingQuadsForDoc(doc);
-        console.log(`${existingQuads.length} existing quads related to doc ${doc["@id"]}.`);
-        quads = Helpers.deduplicateQuads(await Doc.toQuads(doc));
-        console.log(`${quads.length} quads in total related to doc ${doc["@id"]}.`);
-        diff = Helpers.deduplicateQuads(Helpers.quickDiff(existingQuads, quads));
-        console.log(`${diff.length} quads in diff.`);
+      console.log('Processing data...');
+      existingQuads = await Helpers.existingQuadsForDoc(doc);
+      console.log(`${existingQuads.length} existing quads related to doc ${doc["@id"]}.`);
+      quads = Helpers.deduplicateQuads(await Doc.toQuads(doc));
+      console.log(`${quads.length} quads in total related to doc ${doc["@id"]}.`);
+      diff = Helpers.deduplicateQuads(Helpers.quickDiff(existingQuads, quads));
+      console.log(`${diff.length} quads in diff.`);
 
-        if (diff.length === 0) return diff.length;
-        console.log('Processing diff:', diff);
+      if (diff.length === 0) return diff.length;
+      console.log('Processing diff:', diff);
 
-        await Helpers.writeQuads(diff);
-        return diff.length;
-        // let docs;
-        // switch(action) {
-        //   case 'write':
-        //   // docs = Helpers.quadsToDocs(unionBy(existingQuads, diff, quadIdentity));
-        //   // break;
-        //   // case 'delete':
-        //   //   await Helpers.deleteQuads(diff);
-        //   //   // docs = Helpers.quadsToDocs(differenceBy(existingQuads, diff, quadIdentity));
-        //   // break;
-        // }
-      } catch(e) {
-        console.log(`ERROR! Skipping doc ${doc["@id"]}.`);
-        console.error(e);
+      await Helpers.writeQuads(diff);
 
-        if (e.message.match(/quad exists/i)) {
-          // existingQuads = await Helpers.existingQuadsForDoc(data);
-          // quads = Helpers.deduplicateQuads(await Doc.toQuads(data));
-          // diff = Helpers.deduplicateQuads(differenceBy(unionBy(quads, existingQuads, quadIdentity), existingQuads, quadIdentity));
+      const totalQuads = [ ...existingQuads, ...diff ];
+      const updated = await Doc.fromQuads(totalQuads, Context.context);
+      const frame = { "@id": data["@id"], "@context": Context.context };
+      const [ framed ] = await Doc.frame([ updated ] , frame);
 
-          // console.log('Tracing existing quads in diff of length: ', diff.length);
-          // const existing = await traceExistingQuads(diff);
-          // if (existing.length !== 0) {
-          //   console.log('Errored on quads:', JSON.stringify(existing));
-          //   console.log('Determined existing quads:', JSON.stringify(existingQuads));
-          //   process.exit(1);
-          // } else {
-          //   console.log('Something strange is occuring, none of the diff quads seem to exist, but diff processing still failed.');
-          //   console.log(Quad.toNQuads(diff));
-          //   const waitingPromise = new Promise((resolve) => {
-          //     setTimeout(() => resolve(), 20000);
-          //   });
-          //   await waitingPromise;
-          //   process.exit(1);
-          // }
-        }
+      console.log('Quads processed. Sending updated doc(s)...');
 
-        return 0;
-      }
+      await send({ action, key: framed['@id'], data: framed });
     }));
 
-    const diffLength = diffLengths.reduce((memo, length) => memo + (length || 0), 0);
-    console.log('Total diffLength:', diffLength);
-    if (typeof diffLength !== 'number' || diffLength === 0) return;
-
-    console.log('Quads processed. Sending updated doc(s)...');
-
-    await send({ action, key: data['@id'], data });
+    // const diffLength = diffLengths.reduce((memo, length) => memo + (length || 0), 0);
+    // console.log('Total diffLength:', diffLength);
       // await Promise.all(docs.map(data => send({ action, key: data['@id'], data })));
         // console.log('Tracing duplicate quad:');
       // let quads;
