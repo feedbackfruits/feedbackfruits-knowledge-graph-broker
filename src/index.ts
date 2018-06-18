@@ -50,15 +50,26 @@ async function init({ name }: BrokerConfig) {
       console.log(`${diff.length} quads in diff.`);
 
       if (diff.length === 0) return diff.length;
-      console.log('Processing diff:', diff);
-
-      await Helpers.writeQuads(diff);
 
       const totalQuads = [ ...existingQuads, ...diff ];
+
       const updated = await Doc.fromQuads(totalQuads, Context.context);
       const frame = { "@id": data["@id"], "@context": Context.context };
       const [ framed ] = await Doc.frame([ updated ] , frame);
 
+      try {
+        // Validate before writing diff
+        await Doc.validate(framed, Context.context);
+      } catch(e) {
+        console.error('Broke on validation. Not writing diff or sending doc:', framed["@id"]);
+        console.error(e);
+        return;
+        // throw e;
+      }
+
+      // Write diff only if validation passes
+      console.log('Processing diff:', diff);
+      await Helpers.writeQuads(diff);
       console.log('Quads processed. Sending updated doc(s)...');
 
       await send({ action, key: framed['@id'], data: framed });
