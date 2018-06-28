@@ -7,6 +7,7 @@ import { unionBy, differenceBy } from 'lodash';
 
 import * as Config from './config';
 import * as Helpers from './helpers';
+import * as Neptune from './neptune';
 
 const cayley = Cayley(Config.CAYLEY_ADDRESS);
 
@@ -16,13 +17,13 @@ export type BrokerConfig = {
 
 export type SendFn = (operation: Operation<Doc>) => Promise<void>;
 
-async function traceExistingQuads(quads: Quad[]): Promise<Quad[]> {
-  return quads.reduce(async (memo, quad) => {
-    const exists = await Helpers.quadExists(quad);
-    if (exists) return [ ...(await memo), quad];
-    return memo;
-  }, Promise.resolve(<Quad[]>[]));
-}
+// async function traceExistingQuads(quads: Quad[]): Promise<Quad[]> {
+//   return quads.reduce(async (memo, quad) => {
+//     const exists = await Helpers.quadExists(quad);
+//     if (exists) return [ ...(await memo), quad];
+//     return memo;
+//   }, Promise.resolve(<Quad[]>[]));
+// }
 
 function quadIdentity(quad) {
   // return JSON.stringify(quad);
@@ -69,7 +70,7 @@ async function init({ name }: BrokerConfig) {
 
       // Write diff only if validation passes
       console.log('Processing diff:', diff);
-      await Helpers.writeQuads(diff);
+      await Neptune.writeQuads(diff);
       console.log('Quads processed. Sending updated doc(s)...');
 
       await send({ action, key: framed['@id'], data: framed });
