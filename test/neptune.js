@@ -18,6 +18,13 @@ test('getQuads: it gets quads', async t => {
     }
   ];
 
+
+  // Delay so poseidon actually has time to process
+  const timeoutPromise = new Promise((resolve) => {
+    setTimeout(() => resolve(), 5000);
+  });
+  await timeoutPromise;
+
   await Neptune.writeQuads(quads);
 
   const subject = "https://knowledge-express/test-subject";

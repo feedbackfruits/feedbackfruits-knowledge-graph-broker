@@ -34,7 +34,7 @@ export async function queryNeptune(query: string) {
   });
 
   const text = await response.text();
-  console.log('Neptune reponse:', response.status, text);
+  console.log('Neptune query reponse:', response.status, text);
   const json = JSON.parse(text);
   return json;
 }
@@ -51,15 +51,15 @@ export async function updateNeptune(update: string) {
   });
 
   const text = await response.text();
-  // console.log('Neptune reponse:', response.status, text);
-  const json = JSON.parse(text);
-  return json;
+  console.log('Neptune update reponse:', response.status, text);
+  return { update: response.status === 204 };
+  // const json = JSON.parse(text);
+  // return json;
 }
 
 export async function getQuads(...subjects: string[]) {
   const query = `
     SELECT *
-    FROM NAMED ${Config.GRAPH}
     WHERE {
       GRAPH ${Config.GRAPH} {
         VALUES (?subject) { ${subjects.map(subject => `( <${subject}> )`).join(' ')} }

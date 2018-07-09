@@ -8,7 +8,12 @@ jobs:
           NODE_ENV: test
           INPUT_TOPIC: update_requests
           OUTPUT_TOPIC: updates
-      - image: quay.io/cayleygraph/cayley:latest
+          NEPTUNE_ADDRESS: http://localhost:8082/sparql
+      - image: daxid/parliament-triplestore:latest
+      - image: knowledgeexpress/poseidon:latest
+        environment:
+          SPARQL_QUERY_ENDPOINT: http://localhost:8089/parliament/sparql
+          SPARQL_UPDATE_ENDPOINT: http://localhost:8089/parliament/sparql
       # - image: feedbackfruits/feedbackfruits-knowledge-graph:latest
       #   auth:
       #     username: $DOCKERHUB_USER
@@ -24,10 +29,10 @@ jobs:
     steps:
       - checkout
 
-      - run:
-          name: Seed Cayley
-          command: |
-            curl --fail -H "Content-Type: multipart/form-data" -XPOST -F NQuadFile=@seeds/cayley.nq localhost:64210/api/v1/write/file/nquad
+      # - run:
+      #     name: Seed Cayley
+      #     command: |
+      #       curl --fail -H "Content-Type: multipart/form-data" -XPOST -F NQuadFile=@seeds/cayley.nq localhost:64210/api/v1/write/file/nquad
 
       - restore_cache:
           keys:
