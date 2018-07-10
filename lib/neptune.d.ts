@@ -1,4 +1,5 @@
 import { Quad } from 'feedbackfruits-knowledge-engine';
+export declare type SPARQLUpdate = string;
 export declare function parseResult(result: any): any;
 export declare function queryNeptune(query: string): Promise<any>;
 export declare function updateNeptune(update: string): Promise<{

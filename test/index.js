@@ -37,7 +37,7 @@ test('it works and deduplicates', async (t) => {
       output: INPUT_TOPIC,
       receive,
       options: {
-        concurrency: 1
+        concurrency: 100
       }
     });
 
