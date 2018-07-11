@@ -29,8 +29,9 @@ export function deduplicateQuads(quads: Quad[]): Quad[] {
 }
 
 export async function existingQuadsForDoc(doc: Doc): Promise<Quad[]> {
-  const flattened = await Doc.flatten(doc, Context.context);
-  const ids = flattened.map(doc => doc["@id"]);
+  // const flattened = await Doc.flatten(doc, Context.context);
+  // const ids = flattened.map(doc => doc["@id"]);
+  const ids  = [ doc["@id"] ];
   const quads = await Neptune.getQuads(...ids);
   return quads;
 }
