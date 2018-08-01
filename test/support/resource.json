@@ -15,6 +15,8 @@
   "sourceOrganization": [
     "https://www.khanacademy.org/"
   ],
+  "contentDuration": "PT273.10999999999996S",
+  "contentLength": 3358,
   "topic": [
     "https://www.khanacademy.org/video/multiplying-negative-and-positive-fractions"
   ],
@@ -856,52 +858,56 @@
   ],
   "annotation": [
     {
-      "@id": "tag:#aHR0cHM6Ly93d3cueW91dHViZS5jb20vd2F0Y2g/dj1waTNXV1EwcTZMYy1odHRwOi8vZGJwZWRpYS5vcmcvcmVzb3VyY2UvRnJhY3Rpb25fKG1hdGhlbWF0aWNzKS0zNi1mcmFjdGlvbnM=",
-      "tagOf": "https://www.youtube.com/watch?v=pi3WWQ0q6Lc",
-      "@type": "Annotation",
-      "about": {
-        "@id": "http://dbpedia.org/resource/Fraction_(mathematics)",
-        "@type": "Entity"
-      },
-      "score": 0.9999999919579068,
-      "detectedAs": "fractions",
-      "startPosition": 36
-    },
-    {
-      "@id": "tag:#aHR0cHM6Ly93d3cueW91dHViZS5jb20vd2F0Y2g/dj1waTNXV1EwcTZMYy1odHRwOi8vZGJwZWRpYS5vcmcvcmVzb3VyY2UvSW50ZWdlci0xNTUtaW50ZWdlcg==",
-      "tagOf": "https://www.youtube.com/watch?v=pi3WWQ0q6Lc",
-      "@type": "Annotation",
-      "about": {
-        "@id": "http://dbpedia.org/resource/Integer",
-        "@type": "Entity"
-      },
-      "score": 1,
-      "detectedAs": "integer",
-      "startPosition": 155
-    },
-    {
       "@id": "tag:#aHR0cHM6Ly93d3cueW91dHViZS5jb20vd2F0Y2g/dj1waTNXV1EwcTZMYy1odHRwOi8vZGJwZWRpYS5vcmcvcmVzb3VyY2UvR3JlYXRlc3RfY29tbW9uX2Rpdmlzb3ItODA1LWdyZWF0ZXN0IGNvbW1vbiBmYWN0b3I=",
-      "tagOf": "https://www.youtube.com/watch?v=pi3WWQ0q6Lc",
-      "@type": "Annotation",
-      "about": {
-        "@id": "http://dbpedia.org/resource/Greatest_common_divisor",
-        "@type": "Entity"
-      },
-      "score": 0.999999945374158,
+      "@type": [
+        "VideoAnnotation",
+        "Annotation"
+      ],
+      "about": "http://dbpedia.org/resource/Greatest_common_divisor",
       "detectedAs": "greatest common factor",
-      "startPosition": 805
+      "score": 0.999999945374158,
+      "startDuration": "PT62.15S",
+      "startPosition": 805,
+      "tagOf": "https://www.youtube.com/watch?v=pi3WWQ0q6Lc"
     },
     {
       "@id": "tag:#aHR0cHM6Ly93d3cueW91dHViZS5jb20vd2F0Y2g/dj1waTNXV1EwcTZMYy1odHRwOi8vZGJwZWRpYS5vcmcvcmVzb3VyY2UvRnJhY3Rpb25fKG1hdGhlbWF0aWNzKS0yODk1LWZyYWN0aW9ucw==",
-      "tagOf": "https://www.youtube.com/watch?v=pi3WWQ0q6Lc",
-      "@type": "Annotation",
-      "about": {
-        "@id": "http://dbpedia.org/resource/Fraction_(mathematics)",
-        "@type": "Entity"
-      },
-      "score": 0.9999999919579068,
+      "@type": [
+        "VideoAnnotation",
+        "Annotation"
+      ],
+      "about": "http://dbpedia.org/resource/Fraction_(mathematics)",
       "detectedAs": "fractions",
-      "startPosition": 2895
+      "score": 0.9999999919579068,
+      "startDuration": "PT220.1S",
+      "startPosition": 2895,
+      "tagOf": "https://www.youtube.com/watch?v=pi3WWQ0q6Lc"
+    },
+    {
+      "@id": "tag:#aHR0cHM6Ly93d3cueW91dHViZS5jb20vd2F0Y2g/dj1waTNXV1EwcTZMYy1odHRwOi8vZGJwZWRpYS5vcmcvcmVzb3VyY2UvRnJhY3Rpb25fKG1hdGhlbWF0aWNzKS0zNi1mcmFjdGlvbnM=",
+      "@type": [
+        "VideoAnnotation",
+        "Annotation"
+      ],
+      "about": "http://dbpedia.org/resource/Fraction_(mathematics)",
+      "detectedAs": "fractions",
+      "score": 0.9999999919579068,
+      "startDuration": "PT0.6S",
+      "startPosition": 36,
+      "tagOf": "https://www.youtube.com/watch?v=pi3WWQ0q6Lc"
+    },
+    {
+      "@id": "tag:#aHR0cHM6Ly93d3cueW91dHViZS5jb20vd2F0Y2g/dj1waTNXV1EwcTZMYy1odHRwOi8vZGJwZWRpYS5vcmcvcmVzb3VyY2UvSW50ZWdlci0xNTUtaW50ZWdlcg==",
+      "@type": [
+        "VideoAnnotation",
+        "Annotation"
+      ],
+      "about": "http://dbpedia.org/resource/Integer",
+      "detectedAs": "integer",
+      "score": 1,
+      "startDuration": "PT15.4S",
+      "startPosition": 155,
+      "tagOf": "https://www.youtube.com/watch?v=pi3WWQ0q6Lc"
     }
   ]
 }

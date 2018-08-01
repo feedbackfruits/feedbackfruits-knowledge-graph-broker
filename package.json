@@ -48,7 +48,7 @@
     "cayley": "^0.2.1",
     "dataloader": "^1.4.0",
     "dotenv": "^4.0.0",
-    "feedbackfruits-knowledge-engine": "github:feedbackfruits/feedbackfruits-knowledge-engine#^1.4.1",
+    "feedbackfruits-knowledge-engine": "github:feedbackfruits/feedbackfruits-knowledge-engine#^1.4.4",
     "isuri": "^2.0.3",
     "jsonld": "^0.4.12",
     "lodash": "^4.17.4",

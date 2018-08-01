@@ -15,7 +15,7 @@ const {
 
 const CONCURRENCY = parseInt(process.env.CONCURRENCY) || 5;
 const WEB_CONCURRENCY = parseInt(process.env.WEB_CONCURRENCY) || 50;
-const GRAPH = `<https://knowledge.express/graph/${NODE_ENV}>`;
+const GRAPH = 'GRAPH' in process.env ? process.env.GRAPH : `<https://knowledge.express/graph/${NODE_ENV}>`;
 
 export {
   NAME,

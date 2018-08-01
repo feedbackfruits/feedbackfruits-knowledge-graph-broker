@@ -1796,24 +1796,24 @@ fclone@1.0.11, fclone@^1:
   version "1.0.11"
   resolved "https://registry.yarnpkg.com/fclone/-/fclone-1.0.11.tgz#10e85da38bfea7fc599341c296ee1d77266ee640"
 
-feedbackfruits-knowledge-context@feedbackfruits/feedbackfruits-knowledge-context#^1.1.7:
-  version "1.1.7"
-  resolved "https://codeload.github.com/feedbackfruits/feedbackfruits-knowledge-context/tar.gz/39dbb713cf6612f2003055517416e4e027d72768"
+feedbackfruits-knowledge-context@feedbackfruits/feedbackfruits-knowledge-context#^1.1.13:
+  version "1.1.13"
+  resolved "https://codeload.github.com/feedbackfruits/feedbackfruits-knowledge-context/tar.gz/535b6bc8015b218d8215bf246b742abf48299023"
   dependencies:
     "@types/node" "^8.0.8"
     recursive-readdir-sync "^1.0.6"
     tslint "^5.5.0"
     typescript "^2.4.1"
 
-"feedbackfruits-knowledge-engine@github:feedbackfruits/feedbackfruits-knowledge-engine#^1.4.1":
-  version "1.4.1"
-  resolved "https://codeload.github.com/feedbackfruits/feedbackfruits-knowledge-engine/tar.gz/0ff55f7111e83e493355f0473ff4c514d330d72e"
+"feedbackfruits-knowledge-engine@github:feedbackfruits/feedbackfruits-knowledge-engine#^1.4.4":
+  version "1.4.4"
+  resolved "https://codeload.github.com/feedbackfruits/feedbackfruits-knowledge-engine/tar.gz/cf10ccf0b91a595ef27cfecb516830b0583f69a8"
   dependencies:
     "@types/n3" "^0.0.3"
     "@types/node" "^8.0.14"
     dotenv "^4.0.0"
     duration-iso-8601 "^1.1.0"
-    feedbackfruits-knowledge-context feedbackfruits/feedbackfruits-knowledge-context#^1.1.7
+    feedbackfruits-knowledge-context feedbackfruits/feedbackfruits-knowledge-context#^1.1.13
     isuri "^2.0.3"
     jsonld "^0.5.18"
     memux "^0.4.5"
