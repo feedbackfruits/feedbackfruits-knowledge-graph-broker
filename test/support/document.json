@@ -1,0 +1,426 @@
+{
+  "@id": "https://ocw.mit.edu/courses/physics/8-01sc-classical-mechanics-fall-2016/assignments/MIT8_01F16_pset1_new.pdf",
+  "@type": [
+    "Resource",
+    "Document"
+  ],
+  "encoding": [
+    {
+      "@id": "https://staging-media.feedbackfruits.com/5b5c91b3d438f9003304d811",
+      "@type": "MediaObject",
+      "name": "MIT8_01F16_pset1_new",
+      "contentUrl": "https://staging-media.feedbackfruits.com/5b5c91b3d438f9003304d811/MIT8_01F16_pset1_new.pdf",
+      "encodingFormat": "pdf",
+      "encodesCreativeWork": "https://ocw.mit.edu/courses/physics/8-01sc-classical-mechanics-fall-2016/assignments/MIT8_01F16_pset1_new.pdf"
+    }
+  ],
+  "sourceOrganization": [
+    "https://ocw.mit.edu"
+  ],
+  "tag": [
+    {
+      "@id": "tag:#aHR0cHM6Ly9vY3cubWl0LmVkdS9jb3Vyc2VzL3BoeXNpY3MvOC0wMXNjLWNsYXNzaWNhbC1tZWNoYW5pY3MtZmFsbC0yMDE2L2Fzc2lnbm1lbnRzL01JVDhfMDFGMTZfcHNldDFfbmV3LnBkZi1odHRwOi8vZGJwZWRpYS5vcmcvcmVzb3VyY2UvVGltZQ==",
+      "@type": [
+        "https://knowledge.express/Tag"
+      ],
+      "tagOf": "https://ocw.mit.edu/courses/physics/8-01sc-classical-mechanics-fall-2016/assignments/MIT8_01F16_pset1_new.pdf",
+      "about": {
+        "@id": "http://dbpedia.org/resource/Time",
+        "@type": "https://knowledge.express/Entity"
+      },
+      "score": 0.988121
+    },
+    {
+      "@id": "tag:#aHR0cHM6Ly9vY3cubWl0LmVkdS9jb3Vyc2VzL3BoeXNpY3MvOC0wMXNjLWNsYXNzaWNhbC1tZWNoYW5pY3MtZmFsbC0yMDE2L2Fzc2lnbm1lbnRzL01JVDhfMDFGMTZfcHNldDFfbmV3LnBkZi1odHRwOi8vZGJwZWRpYS5vcmcvcmVzb3VyY2UvQWNjZWxlcmF0aW9u",
+      "@type": [
+        "https://knowledge.express/Tag"
+      ],
+      "tagOf": "https://ocw.mit.edu/courses/physics/8-01sc-classical-mechanics-fall-2016/assignments/MIT8_01F16_pset1_new.pdf",
+      "about": {
+        "@id": "http://dbpedia.org/resource/Acceleration",
+        "@type": "https://knowledge.express/Entity"
+      },
+      "score": 0.906949
+    },
+    {
+      "@id": "tag:#aHR0cHM6Ly9vY3cubWl0LmVkdS9jb3Vyc2VzL3BoeXNpY3MvOC0wMXNjLWNsYXNzaWNhbC1tZWNoYW5pY3MtZmFsbC0yMDE2L2Fzc2lnbm1lbnRzL01JVDhfMDFGMTZfcHNldDFfbmV3LnBkZi1odHRwOi8vZGJwZWRpYS5vcmcvcmVzb3VyY2UvQ2xhc3NpY2FsX21lY2hhbmljcw==",
+      "@type": [
+        "https://knowledge.express/Tag"
+      ],
+      "tagOf": "https://ocw.mit.edu/courses/physics/8-01sc-classical-mechanics-fall-2016/assignments/MIT8_01F16_pset1_new.pdf",
+      "about": {
+        "@id": "http://dbpedia.org/resource/Classical_mechanics",
+        "@type": "https://knowledge.express/Entity"
+      },
+      "score": 0.852481
+    },
+    {
+      "@id": "tag:#aHR0cHM6Ly9vY3cubWl0LmVkdS9jb3Vyc2VzL3BoeXNpY3MvOC0wMXNjLWNsYXNzaWNhbC1tZWNoYW5pY3MtZmFsbC0yMDE2L2Fzc2lnbm1lbnRzL01JVDhfMDFGMTZfcHNldDFfbmV3LnBkZi1odHRwOi8vZGJwZWRpYS5vcmcvcmVzb3VyY2UvS2luZW1hdGljcw==",
+      "@type": [
+        "https://knowledge.express/Tag"
+      ],
+      "tagOf": "https://ocw.mit.edu/courses/physics/8-01sc-classical-mechanics-fall-2016/assignments/MIT8_01F16_pset1_new.pdf",
+      "about": {
+        "@id": "http://dbpedia.org/resource/Kinematics",
+        "@type": "https://knowledge.express/Entity"
+      },
+      "score": 0.779982
+    },
+    {
+      "@id": "tag:#aHR0cHM6Ly9vY3cubWl0LmVkdS9jb3Vyc2VzL3BoeXNpY3MvOC0wMXNjLWNsYXNzaWNhbC1tZWNoYW5pY3MtZmFsbC0yMDE2L2Fzc2lnbm1lbnRzL01JVDhfMDFGMTZfcHNldDFfbmV3LnBkZi1odHRwOi8vZGJwZWRpYS5vcmcvcmVzb3VyY2UvVmVsb2NpdHk=",
+      "@type": [
+        "https://knowledge.express/Tag"
+      ],
+      "tagOf": "https://ocw.mit.edu/courses/physics/8-01sc-classical-mechanics-fall-2016/assignments/MIT8_01F16_pset1_new.pdf",
+      "about": {
+        "@id": "http://dbpedia.org/resource/Velocity",
+        "@type": "https://knowledge.express/Entity"
+      },
+      "score": 0.738813
+    },
+    {
+      "@id": "tag:#aHR0cHM6Ly9vY3cubWl0LmVkdS9jb3Vyc2VzL3BoeXNpY3MvOC0wMXNjLWNsYXNzaWNhbC1tZWNoYW5pY3MtZmFsbC0yMDE2L2Fzc2lnbm1lbnRzL01JVDhfMDFGMTZfcHNldDFfbmV3LnBkZi1odHRwOi8vZGJwZWRpYS5vcmcvcmVzb3VyY2UvUGh5c2ljcw==",
+      "@type": [
+        "https://knowledge.express/Tag"
+      ],
+      "tagOf": "https://ocw.mit.edu/courses/physics/8-01sc-classical-mechanics-fall-2016/assignments/MIT8_01F16_pset1_new.pdf",
+      "about": {
+        "@id": "http://dbpedia.org/resource/Physics",
+        "@type": "https://knowledge.express/Entity"
+      },
+      "score": 0.711452
+    },
+    {
+      "@id": "tag:#aHR0cHM6Ly9vY3cubWl0LmVkdS9jb3Vyc2VzL3BoeXNpY3MvOC0wMXNjLWNsYXNzaWNhbC1tZWNoYW5pY3MtZmFsbC0yMDE2L2Fzc2lnbm1lbnRzL01JVDhfMDFGMTZfcHNldDFfbmV3LnBkZi1odHRwOi8vZGJwZWRpYS5vcmcvcmVzb3VyY2UvR2VuZXJhbF9yZWxhdGl2aXR5",
+      "@type": [
+        "https://knowledge.express/Tag"
+      ],
+      "tagOf": "https://ocw.mit.edu/courses/physics/8-01sc-classical-mechanics-fall-2016/assignments/MIT8_01F16_pset1_new.pdf",
+      "about": {
+        "@id": "http://dbpedia.org/resource/General_relativity",
+        "@type": "https://knowledge.express/Entity"
+      },
+      "score": 0.673195
+    },
+    {
+      "@id": "tag:#aHR0cHM6Ly9vY3cubWl0LmVkdS9jb3Vyc2VzL3BoeXNpY3MvOC0wMXNjLWNsYXNzaWNhbC1tZWNoYW5pY3MtZmFsbC0yMDE2L2Fzc2lnbm1lbnRzL01JVDhfMDFGMTZfcHNldDFfbmV3LnBkZi1odHRwOi8vZGJwZWRpYS5vcmcvcmVzb3VyY2UvRnVuZGFtZW50YWxfcGh5c2ljc19jb25jZXB0cw==",
+      "@type": [
+        "https://knowledge.express/Tag"
+      ],
+      "tagOf": "https://ocw.mit.edu/courses/physics/8-01sc-classical-mechanics-fall-2016/assignments/MIT8_01F16_pset1_new.pdf",
+      "about": {
+        "@id": "http://dbpedia.org/resource/Fundamental_physics_concepts",
+        "@type": "https://knowledge.express/Entity"
+      },
+      "score": 0.557738
+    }
+  ],
+  "annotation": [
+    {
+      "@id": "tag:#aHR0cHM6Ly9vY3cubWl0LmVkdS9jb3Vyc2VzL3BoeXNpY3MvOC0wMXNjLWNsYXNzaWNhbC1tZWNoYW5pY3MtZmFsbC0yMDE2L2Fzc2lnbm1lbnRzL01JVDhfMDFGMTZfcHNldDFfbmV3LnBkZi1odHRwOi8vZGJwZWRpYS5vcmcvcmVzb3VyY2UvQ2xhc3NpY2FsX21lY2hhbmljcy00MzcwLUNsYXNzaWNhbCBNZWNoYW5pY3M=",
+      "@type": [
+        "DocumentAnnotation",
+        "Annotation"
+      ],
+      "about": "http://dbpedia.org/resource/Classical_mechanics",
+      "boundingBox": [
+        "0.23489705882352943 0.16381060606060607 0.3286029411764706 0.18397727272727274",
+        "0.15101470588235294 0.16381060606060607 0.22944607843137255 0.18397727272727274"
+      ],
+      "detectedAs": "Classical Mechanics",
+      "score": 1,
+      "startPosition": 4370,
+      "tagOf": "https://ocw.mit.edu/courses/physics/8-01sc-classical-mechanics-fall-2016/assignments/MIT8_01F16_pset1_new.pdf"
+    },
+    {
+      "@id": "tag:#aHR0cHM6Ly9vY3cubWl0LmVkdS9jb3Vyc2VzL3BoeXNpY3MvOC0wMXNjLWNsYXNzaWNhbC1tZWNoYW5pY3MtZmFsbC0yMDE2L2Fzc2lnbm1lbnRzL01JVDhfMDFGMTZfcHNldDFfbmV3LnBkZi1odHRwOi8vZGJwZWRpYS5vcmcvcmVzb3VyY2UvQ2xhc3NpY2FsX21lY2hhbmljcy02LUNsYXNzaWNhbCBNZWNoYW5pY3M=",
+      "@type": [
+        "DocumentAnnotation",
+        "Annotation"
+      ],
+      "about": "http://dbpedia.org/resource/Classical_mechanics",
+      "boundingBox": [
+        "0.24755024509803925 0.09102049242424241 0.33988699346405227 0.10442458333333332",
+        "0.16843627450980392 0.09102049242424241 0.24071323529411764 0.10442458333333332"
+      ],
+      "detectedAs": "Classical Mechanics",
+      "score": 1,
+      "startPosition": 6,
+      "tagOf": "https://ocw.mit.edu/courses/physics/8-01sc-classical-mechanics-fall-2016/assignments/MIT8_01F16_pset1_new.pdf"
+    },
+    {
+      "@id": "tag:#aHR0cHM6Ly9vY3cubWl0LmVkdS9jb3Vyc2VzL3BoeXNpY3MvOC0wMXNjLWNsYXNzaWNhbC1tZWNoYW5pY3MtZmFsbC0yMDE2L2Fzc2lnbm1lbnRzL01JVDhfMDFGMTZfcHNldDFfbmV3LnBkZi1odHRwOi8vZGJwZWRpYS5vcmcvcmVzb3VyY2UvQ2xhc3NpY2FsX21lY2hhbmljcy0xMTM2LUNsYXNzaWNhbCBNZWNoYW5pY3M=",
+      "@type": [
+        "DocumentAnnotation",
+        "Annotation"
+      ],
+      "about": "http://dbpedia.org/resource/Classical_mechanics",
+      "boundingBox": [
+        "0.24697593627450978 0.09552806818181818 0.3384473137254902 0.10893215909090909",
+        "0.1681159117647059 0.09552806818181818 0.24058821568627453 0.10893215909090909"
+      ],
+      "detectedAs": "Classical Mechanics",
+      "score": 1,
+      "startPosition": 1136,
+      "tagOf": "https://ocw.mit.edu/courses/physics/8-01sc-classical-mechanics-fall-2016/assignments/MIT8_01F16_pset1_new.pdf"
+    },
+    {
+      "@id": "tag:#aHR0cHM6Ly9vY3cubWl0LmVkdS9jb3Vyc2VzL3BoeXNpY3MvOC0wMXNjLWNsYXNzaWNhbC1tZWNoYW5pY3MtZmFsbC0yMDE2L2Fzc2lnbm1lbnRzL01JVDhfMDFGMTZfcHNldDFfbmV3LnBkZi1odHRwOi8vZGJwZWRpYS5vcmcvcmVzb3VyY2UvQ2xhc3NpY2FsX21lY2hhbmljcy0yMTQwLUNsYXNzaWNhbCBNZWNoYW5pY3M=",
+      "@type": [
+        "DocumentAnnotation",
+        "Annotation"
+      ],
+      "about": "http://dbpedia.org/resource/Classical_mechanics",
+      "boundingBox": [
+        "0.24697593627450978 0.09552806818181818 0.3384473137254902 0.10893215909090909",
+        "0.1681159117647059 0.09552806818181818 0.24058821568627453 0.10893215909090909"
+      ],
+      "detectedAs": "Classical Mechanics",
+      "score": 1,
+      "startPosition": 2140,
+      "tagOf": "https://ocw.mit.edu/courses/physics/8-01sc-classical-mechanics-fall-2016/assignments/MIT8_01F16_pset1_new.pdf"
+    },
+    {
+      "@id": "tag:#aHR0cHM6Ly9vY3cubWl0LmVkdS9jb3Vyc2VzL3BoeXNpY3MvOC0wMXNjLWNsYXNzaWNhbC1tZWNoYW5pY3MtZmFsbC0yMDE2L2Fzc2lnbm1lbnRzL01JVDhfMDFGMTZfcHNldDFfbmV3LnBkZi1odHRwOi8vZGJwZWRpYS5vcmcvcmVzb3VyY2UvQ2xhc3NpY2FsX21lY2hhbmljcy0yOTMwLUNsYXNzaWNhbCBNZWNoYW5pY3M=",
+      "@type": [
+        "DocumentAnnotation",
+        "Annotation"
+      ],
+      "about": "http://dbpedia.org/resource/Classical_mechanics",
+      "boundingBox": [
+        "0.24697593627450978 0.09552806818181818 0.3384473137254902 0.10893215909090909",
+        "0.1681159117647059 0.09552806818181818 0.24058821568627453 0.10893215909090909"
+      ],
+      "detectedAs": "Classical Mechanics",
+      "score": 1,
+      "startPosition": 2930,
+      "tagOf": "https://ocw.mit.edu/courses/physics/8-01sc-classical-mechanics-fall-2016/assignments/MIT8_01F16_pset1_new.pdf"
+    },
+    {
+      "@id": "tag:#aHR0cHM6Ly9vY3cubWl0LmVkdS9jb3Vyc2VzL3BoeXNpY3MvOC0wMXNjLWNsYXNzaWNhbC1tZWNoYW5pY3MtZmFsbC0yMDE2L2Fzc2lnbm1lbnRzL01JVDhfMDFGMTZfcHNldDFfbmV3LnBkZi1odHRwOi8vZGJwZWRpYS5vcmcvcmVzb3VyY2UvQ2xhc3NpY2FsX21lY2hhbmljcy0zNzE4LUNsYXNzaWNhbCBNZWNoYW5pY3M=",
+      "@type": [
+        "DocumentAnnotation",
+        "Annotation"
+      ],
+      "about": "http://dbpedia.org/resource/Classical_mechanics",
+      "boundingBox": [
+        "0.24697593627450978 0.09552806818181818 0.3384473137254902 0.10893215909090909",
+        "0.1681159117647059 0.09552806818181818 0.24058821568627453 0.10893215909090909"
+      ],
+      "detectedAs": "Classical Mechanics",
+      "score": 1,
+      "startPosition": 3718,
+      "tagOf": "https://ocw.mit.edu/courses/physics/8-01sc-classical-mechanics-fall-2016/assignments/MIT8_01F16_pset1_new.pdf"
+    },
+    {
+      "@id": "tag:#aHR0cHM6Ly9vY3cubWl0LmVkdS9jb3Vyc2VzL3BoeXNpY3MvOC0wMXNjLWNsYXNzaWNhbC1tZWNoYW5pY3MtZmFsbC0yMDE2L2Fzc2lnbm1lbnRzL01JVDhfMDFGMTZfcHNldDFfbmV3LnBkZi1odHRwOi8vZGJwZWRpYS5vcmcvcmVzb3VyY2UvQWNjZWxlcmF0aW9uLTE0MzUtYWNjZWxlcmF0aW9u",
+      "@type": [
+        "DocumentAnnotation",
+        "Annotation"
+      ],
+      "about": "http://dbpedia.org/resource/Acceleration",
+      "boundingBox": [
+        "0.7835274656862745 0.518991452020202 0.8823359313725491 0.5323955429292929"
+      ],
+      "detectedAs": "acceleration",
+      "score": 0.9999999998376552,
+      "startPosition": 1435,
+      "tagOf": "https://ocw.mit.edu/courses/physics/8-01sc-classical-mechanics-fall-2016/assignments/MIT8_01F16_pset1_new.pdf"
+    },
+    {
+      "@id": "tag:#aHR0cHM6Ly9vY3cubWl0LmVkdS9jb3Vyc2VzL3BoeXNpY3MvOC0wMXNjLWNsYXNzaWNhbC1tZWNoYW5pY3MtZmFsbC0yMDE2L2Fzc2lnbm1lbnRzL01JVDhfMDFGMTZfcHNldDFfbmV3LnBkZi1odHRwOi8vZGJwZWRpYS5vcmcvcmVzb3VyY2UvQWNjZWxlcmF0aW9uLTE2MDEtYWNjZWxlcmF0aW9u",
+      "@type": [
+        "DocumentAnnotation",
+        "Annotation"
+      ],
+      "about": "http://dbpedia.org/resource/Acceleration",
+      "boundingBox": [
+        "0.7596577336601307 0.55547125 0.8584857336601308 0.5688753409090909"
+      ],
+      "detectedAs": "acceleration",
+      "score": 0.9999999998376552,
+      "startPosition": 1601,
+      "tagOf": "https://ocw.mit.edu/courses/physics/8-01sc-classical-mechanics-fall-2016/assignments/MIT8_01F16_pset1_new.pdf"
+    },
+    {
+      "@id": "tag:#aHR0cHM6Ly9vY3cubWl0LmVkdS9jb3Vyc2VzL3BoeXNpY3MvOC0wMXNjLWNsYXNzaWNhbC1tZWNoYW5pY3MtZmFsbC0yMDE2L2Fzc2lnbm1lbnRzL01JVDhfMDFGMTZfcHNldDFfbmV3LnBkZi1odHRwOi8vZGJwZWRpYS5vcmcvcmVzb3VyY2UvQWNjZWxlcmF0aW9uLTE2NjUtYWNjZWxlcmF0aW9u",
+      "@type": [
+        "DocumentAnnotation",
+        "Annotation"
+      ],
+      "about": "http://dbpedia.org/resource/Acceleration",
+      "boundingBox": [
+        "0.5863488578431373 0.573711148989899 0.6979288578431372 0.58711523989899"
+      ],
+      "detectedAs": "acceleration",
+      "score": 0.9999999998376552,
+      "startPosition": 1665,
+      "tagOf": "https://ocw.mit.edu/courses/physics/8-01sc-classical-mechanics-fall-2016/assignments/MIT8_01F16_pset1_new.pdf"
+    },
+    {
+      "@id": "tag:#aHR0cHM6Ly9vY3cubWl0LmVkdS9jb3Vyc2VzL3BoeXNpY3MvOC0wMXNjLWNsYXNzaWNhbC1tZWNoYW5pY3MtZmFsbC0yMDE2L2Fzc2lnbm1lbnRzL01JVDhfMDFGMTZfcHNldDFfbmV3LnBkZi1odHRwOi8vZGJwZWRpYS5vcmcvcmVzb3VyY2UvQWNjZWxlcmF0aW9uLTIwOTgtYWNjZWxlcmF0aW9u",
+      "@type": [
+        "DocumentAnnotation",
+        "Annotation"
+      ],
+      "about": "http://dbpedia.org/resource/Acceleration",
+      "boundingBox": [
+        "0.5610851470588236 0.7057906944444444 0.6652069460784313 0.7191947853535353"
+      ],
+      "detectedAs": "acceleration",
+      "score": 0.9999999998376552,
+      "startPosition": 2098,
+      "tagOf": "https://ocw.mit.edu/courses/physics/8-01sc-classical-mechanics-fall-2016/assignments/MIT8_01F16_pset1_new.pdf"
+    },
+    {
+      "@id": "tag:#aHR0cHM6Ly9vY3cubWl0LmVkdS9jb3Vyc2VzL3BoeXNpY3MvOC0wMXNjLWNsYXNzaWNhbC1tZWNoYW5pY3MtZmFsbC0yMDE2L2Fzc2lnbm1lbnRzL01JVDhfMDFGMTZfcHNldDFfbmV3LnBkZi1odHRwOi8vZGJwZWRpYS5vcmcvcmVzb3VyY2UvQWNjZWxlcmF0aW9uLTIzNTktYWNjZWxlcmF0aW9u",
+      "@type": [
+        "DocumentAnnotation",
+        "Annotation"
+      ],
+      "about": "http://dbpedia.org/resource/Acceleration",
+      "boundingBox": [
+        "0.40850976960784313 0.5887654419191919 0.5073182352941177 0.6021695328282828"
+      ],
+      "detectedAs": "acceleration",
+      "score": 0.9999999998376552,
+      "startPosition": 2359,
+      "tagOf": "https://ocw.mit.edu/courses/physics/8-01sc-classical-mechanics-fall-2016/assignments/MIT8_01F16_pset1_new.pdf"
+    },
+    {
+      "@id": "tag:#aHR0cHM6Ly9vY3cubWl0LmVkdS9jb3Vyc2VzL3BoeXNpY3MvOC0wMXNjLWNsYXNzaWNhbC1tZWNoYW5pY3MtZmFsbC0yMDE2L2Fzc2lnbm1lbnRzL01JVDhfMDFGMTZfcHNldDFfbmV3LnBkZi1odHRwOi8vZGJwZWRpYS5vcmcvcmVzb3VyY2UvQWNjZWxlcmF0aW9uLTMxNC1hY2NlbGVyYXRpb24=",
+      "@type": [
+        "DocumentAnnotation",
+        "Annotation"
+      ],
+      "about": "http://dbpedia.org/resource/Acceleration",
+      "boundingBox": [
+        "0.20477653921568625 0.27436140151515154 0.3036045392156863 0.28776549242424243"
+      ],
+      "detectedAs": "acceleration",
+      "score": 0.9999999998376552,
+      "startPosition": 314,
+      "tagOf": "https://ocw.mit.edu/courses/physics/8-01sc-classical-mechanics-fall-2016/assignments/MIT8_01F16_pset1_new.pdf"
+    },
+    {
+      "@id": "tag:#aHR0cHM6Ly9vY3cubWl0LmVkdS9jb3Vyc2VzL3BoeXNpY3MvOC0wMXNjLWNsYXNzaWNhbC1tZWNoYW5pY3MtZmFsbC0yMDE2L2Fzc2lnbm1lbnRzL01JVDhfMDFGMTZfcHNldDFfbmV3LnBkZi1odHRwOi8vZGJwZWRpYS5vcmcvcmVzb3VyY2UvQWNjZWxlcmF0aW9uLTMyOTUtYWNjZWxlcmF0aW9u",
+      "@type": [
+        "DocumentAnnotation",
+        "Annotation"
+      ],
+      "about": "http://dbpedia.org/resource/Acceleration",
+      "boundingBox": [
+        "0.4720450196078431 0.5071922095959596 0.5708730196078431 0.5205963005050506"
+      ],
+      "detectedAs": "acceleration",
+      "score": 0.9999999998376552,
+      "startPosition": 3295,
+      "tagOf": "https://ocw.mit.edu/courses/physics/8-01sc-classical-mechanics-fall-2016/assignments/MIT8_01F16_pset1_new.pdf"
+    },
+    {
+      "@id": "tag:#aHR0cHM6Ly9vY3cubWl0LmVkdS9jb3Vyc2VzL3BoeXNpY3MvOC0wMXNjLWNsYXNzaWNhbC1tZWNoYW5pY3MtZmFsbC0yMDE2L2Fzc2lnbm1lbnRzL01JVDhfMDFGMTZfcHNldDFfbmV3LnBkZi1odHRwOi8vZGJwZWRpYS5vcmcvcmVzb3VyY2UvQWNjZWxlcmF0aW9uLTQ3NC1hY2NlbGVyYXRpb24=",
+      "@type": [
+        "DocumentAnnotation",
+        "Annotation"
+      ],
+      "about": "http://dbpedia.org/resource/Acceleration",
+      "boundingBox": [
+        "0.6270086830065359 0.3632528156565657 0.7258366830065359 0.3766569065656566"
+      ],
+      "detectedAs": "acceleration",
+      "score": 0.9999999998376552,
+      "startPosition": 474,
+      "tagOf": "https://ocw.mit.edu/courses/physics/8-01sc-classical-mechanics-fall-2016/assignments/MIT8_01F16_pset1_new.pdf"
+    },
+    {
+      "@id": "tag:#aHR0cHM6Ly9vY3cubWl0LmVkdS9jb3Vyc2VzL3BoeXNpY3MvOC0wMXNjLWNsYXNzaWNhbC1tZWNoYW5pY3MtZmFsbC0yMDE2L2Fzc2lnbm1lbnRzL01JVDhfMDFGMTZfcHNldDFfbmV3LnBkZi1odHRwOi8vZGJwZWRpYS5vcmcvcmVzb3VyY2UvQWNjZWxlcmF0aW9uLTg5NC1hY2NlbGVyYXRpb24=",
+      "@type": [
+        "DocumentAnnotation",
+        "Annotation"
+      ],
+      "about": "http://dbpedia.org/resource/Acceleration",
+      "boundingBox": [
+        "0.34462975163398696 0.4953336237373738 0.44343821732026145 0.5087377146464647"
+      ],
+      "detectedAs": "acceleration",
+      "score": 0.9999999998376552,
+      "startPosition": 894,
+      "tagOf": "https://ocw.mit.edu/courses/physics/8-01sc-classical-mechanics-fall-2016/assignments/MIT8_01F16_pset1_new.pdf"
+    },
+    {
+      "@id": "tag:#aHR0cHM6Ly9vY3cubWl0LmVkdS9jb3Vyc2VzL3BoeXNpY3MvOC0wMXNjLWNsYXNzaWNhbC1tZWNoYW5pY3MtZmFsbC0yMDE2L2Fzc2lnbm1lbnRzL01JVDhfMDFGMTZfcHNldDFfbmV3LnBkZi1odHRwOi8vZGJwZWRpYS5vcmcvcmVzb3VyY2UvVmVsb2NpdHktMTUzMS12ZWxvY2l0eQ==",
+      "@type": [
+        "DocumentAnnotation",
+        "Annotation"
+      ],
+      "about": "http://dbpedia.org/resource/Velocity",
+      "boundingBox": [
+        "0.1654656862745098 0.55547125 0.22976092647058824 0.5688753409090909"
+      ],
+      "detectedAs": "velocity",
+      "score": 0.9999999993704023,
+      "startPosition": 1531,
+      "tagOf": "https://ocw.mit.edu/courses/physics/8-01sc-classical-mechanics-fall-2016/assignments/MIT8_01F16_pset1_new.pdf"
+    },
+    {
+      "@id": "tag:#aHR0cHM6Ly9vY3cubWl0LmVkdS9jb3Vyc2VzL3BoeXNpY3MvOC0wMXNjLWNsYXNzaWNhbC1tZWNoYW5pY3MtZmFsbC0yMDE2L2Fzc2lnbm1lbnRzL01JVDhfMDFGMTZfcHNldDFfbmV3LnBkZi1odHRwOi8vZGJwZWRpYS5vcmcvcmVzb3VyY2UvVmVsb2NpdHktMTc2Mi12ZWxvY2l0eQ==",
+      "@type": [
+        "DocumentAnnotation",
+        "Annotation"
+      ],
+      "about": "http://dbpedia.org/resource/Velocity",
+      "boundingBox": [
+        "0.39050065849673204 0.6265432196969697 0.45479589869281045 0.6399473106060606"
+      ],
+      "detectedAs": "velocity",
+      "score": 0.9999999993704023,
+      "startPosition": 1762,
+      "tagOf": "https://ocw.mit.edu/courses/physics/8-01sc-classical-mechanics-fall-2016/assignments/MIT8_01F16_pset1_new.pdf"
+    },
+    {
+      "@id": "tag:#aHR0cHM6Ly9vY3cubWl0LmVkdS9jb3Vyc2VzL3BoeXNpY3MvOC0wMXNjLWNsYXNzaWNhbC1tZWNoYW5pY3MtZmFsbC0yMDE2L2Fzc2lnbm1lbnRzL01JVDhfMDFGMTZfcHNldDFfbmV3LnBkZi1odHRwOi8vZGJwZWRpYS5vcmcvcmVzb3VyY2UvVmVsb2NpdHktMzE0OS12ZWxvY2l0eQ==",
+      "@type": [
+        "DocumentAnnotation",
+        "Annotation"
+      ],
+      "about": "http://dbpedia.org/resource/Velocity",
+      "boundingBox": [
+        "0.6803315931372549 0.4707124116161616 0.7446072990196078 0.48411650252525257"
+      ],
+      "detectedAs": "velocity",
+      "score": 0.9999999993704023,
+      "startPosition": 3149,
+      "tagOf": "https://ocw.mit.edu/courses/physics/8-01sc-classical-mechanics-fall-2016/assignments/MIT8_01F16_pset1_new.pdf"
+    },
+    {
+      "@id": "tag:#aHR0cHM6Ly9vY3cubWl0LmVkdS9jb3Vyc2VzL3BoeXNpY3MvOC0wMXNjLWNsYXNzaWNhbC1tZWNoYW5pY3MtZmFsbC0yMDE2L2Fzc2lnbm1lbnRzL01JVDhfMDFGMTZfcHNldDFfbmV3LnBkZi1odHRwOi8vZGJwZWRpYS5vcmcvcmVzb3VyY2UvVmVsb2NpdHktNTU1LXZlbG9jaXR5",
+      "@type": [
+        "DocumentAnnotation",
+        "Annotation"
+      ],
+      "about": "http://dbpedia.org/resource/Velocity",
+      "boundingBox": [
+        "0.5879953562091503 0.39784624999999996 0.6522905964052288 0.4112503409090909"
+      ],
+      "detectedAs": "velocity",
+      "score": 0.9999999993704023,
+      "startPosition": 555,
+      "tagOf": "https://ocw.mit.edu/courses/physics/8-01sc-classical-mechanics-fall-2016/assignments/MIT8_01F16_pset1_new.pdf"
+    },
+    {
+      "@id": "tag:#aHR0cHM6Ly9vY3cubWl0LmVkdS9jb3Vyc2VzL3BoeXNpY3MvOC0wMXNjLWNsYXNzaWNhbC1tZWNoYW5pY3MtZmFsbC0yMDE2L2Fzc2lnbm1lbnRzL01JVDhfMDFGMTZfcHNldDFfbmV3LnBkZi1odHRwOi8vZGJwZWRpYS5vcmcvcmVzb3VyY2UvVmVsb2NpdHktOTg5LXZlbG9jaXR5",
+      "@type": [
+        "DocumentAnnotation",
+        "Annotation"
+      ],
+      "about": "http://dbpedia.org/resource/Velocity",
+      "boundingBox": [
+        "0.505229158496732 0.5783550883838384 0.5695243986928105 0.5917591792929293"
+      ],
+      "detectedAs": "velocity",
+      "score": 0.9999999993704023,
+      "startPosition": 989,
+      "tagOf": "https://ocw.mit.edu/courses/physics/8-01sc-classical-mechanics-fall-2016/assignments/MIT8_01F16_pset1_new.pdf"
+    }
+  ]
+}
