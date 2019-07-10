@@ -1,9 +1,4 @@
-import { Quad, Doc, Helpers, Context } from 'feedbackfruits-knowledge-engine';
-import * as jsonld from 'jsonld';
-import * as isuri from 'isuri';
-import fetch from 'node-fetch';
-
-import * as Cayley from './cayley';
+import { Quad, Doc } from 'feedbackfruits-knowledge-engine';
 import * as Neptune from './neptune';
 
 export function quickDiff(existing: Quad[], other: Quad[]): Quad[] {

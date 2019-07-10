@@ -1,5 +1,5 @@
 import fetch from 'node-fetch';
-import { Quad, Context } from 'feedbackfruits-knowledge-engine';
+import { Quad } from 'feedbackfruits-knowledge-engine';
 import * as Config from './config';
 import * as DataLoader from 'dataloader';
 
