@@ -1,4 +1,5 @@
 {
+  "excludeAfterRemap": false,
   "check-coverage": true,
   "per-file": false,
   "lines": 0,

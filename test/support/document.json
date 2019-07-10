@@ -19,7 +19,7 @@
   ],
   "tag": [
     {
-      "@id": "tag:#aHR0cHM6Ly9vY3cubWl0LmVkdS9jb3Vyc2VzL3BoeXNpY3MvOC0wMXNjLWNsYXNzaWNhbC1tZWNoYW5pY3MtZmFsbC0yMDE2L2Fzc2lnbm1lbnRzL01JVDhfMDFGMTZfcHNldDFfbmV3LnBkZi1odHRwOi8vZGJwZWRpYS5vcmcvcmVzb3VyY2UvVGltZQ==",
+      "@id": "tag#aHR0cHM6Ly9vY3cubWl0LmVkdS9jb3Vyc2VzL3BoeXNpY3MvOC0wMXNjLWNsYXNzaWNhbC1tZWNoYW5pY3MtZmFsbC0yMDE2L2Fzc2lnbm1lbnRzL01JVDhfMDFGMTZfcHNldDFfbmV3LnBkZi1odHRwOi8vZGJwZWRpYS5vcmcvcmVzb3VyY2UvVGltZQ==",
       "@type": [
         "https://knowledge.express/Tag"
       ],
@@ -31,7 +31,7 @@
       "score": 0.988121
     },
     {
-      "@id": "tag:#aHR0cHM6Ly9vY3cubWl0LmVkdS9jb3Vyc2VzL3BoeXNpY3MvOC0wMXNjLWNsYXNzaWNhbC1tZWNoYW5pY3MtZmFsbC0yMDE2L2Fzc2lnbm1lbnRzL01JVDhfMDFGMTZfcHNldDFfbmV3LnBkZi1odHRwOi8vZGJwZWRpYS5vcmcvcmVzb3VyY2UvQWNjZWxlcmF0aW9u",
+      "@id": "tag#aHR0cHM6Ly9vY3cubWl0LmVkdS9jb3Vyc2VzL3BoeXNpY3MvOC0wMXNjLWNsYXNzaWNhbC1tZWNoYW5pY3MtZmFsbC0yMDE2L2Fzc2lnbm1lbnRzL01JVDhfMDFGMTZfcHNldDFfbmV3LnBkZi1odHRwOi8vZGJwZWRpYS5vcmcvcmVzb3VyY2UvQWNjZWxlcmF0aW9u",
       "@type": [
         "https://knowledge.express/Tag"
       ],
@@ -43,7 +43,7 @@
       "score": 0.906949
     },
     {
-      "@id": "tag:#aHR0cHM6Ly9vY3cubWl0LmVkdS9jb3Vyc2VzL3BoeXNpY3MvOC0wMXNjLWNsYXNzaWNhbC1tZWNoYW5pY3MtZmFsbC0yMDE2L2Fzc2lnbm1lbnRzL01JVDhfMDFGMTZfcHNldDFfbmV3LnBkZi1odHRwOi8vZGJwZWRpYS5vcmcvcmVzb3VyY2UvQ2xhc3NpY2FsX21lY2hhbmljcw==",
+      "@id": "tag#aHR0cHM6Ly9vY3cubWl0LmVkdS9jb3Vyc2VzL3BoeXNpY3MvOC0wMXNjLWNsYXNzaWNhbC1tZWNoYW5pY3MtZmFsbC0yMDE2L2Fzc2lnbm1lbnRzL01JVDhfMDFGMTZfcHNldDFfbmV3LnBkZi1odHRwOi8vZGJwZWRpYS5vcmcvcmVzb3VyY2UvQ2xhc3NpY2FsX21lY2hhbmljcw==",
       "@type": [
         "https://knowledge.express/Tag"
       ],
@@ -55,7 +55,7 @@
       "score": 0.852481
     },
     {
-      "@id": "tag:#aHR0cHM6Ly9vY3cubWl0LmVkdS9jb3Vyc2VzL3BoeXNpY3MvOC0wMXNjLWNsYXNzaWNhbC1tZWNoYW5pY3MtZmFsbC0yMDE2L2Fzc2lnbm1lbnRzL01JVDhfMDFGMTZfcHNldDFfbmV3LnBkZi1odHRwOi8vZGJwZWRpYS5vcmcvcmVzb3VyY2UvS2luZW1hdGljcw==",
+      "@id": "tag#aHR0cHM6Ly9vY3cubWl0LmVkdS9jb3Vyc2VzL3BoeXNpY3MvOC0wMXNjLWNsYXNzaWNhbC1tZWNoYW5pY3MtZmFsbC0yMDE2L2Fzc2lnbm1lbnRzL01JVDhfMDFGMTZfcHNldDFfbmV3LnBkZi1odHRwOi8vZGJwZWRpYS5vcmcvcmVzb3VyY2UvS2luZW1hdGljcw==",
       "@type": [
         "https://knowledge.express/Tag"
       ],
@@ -67,7 +67,7 @@
       "score": 0.779982
     },
     {
-      "@id": "tag:#aHR0cHM6Ly9vY3cubWl0LmVkdS9jb3Vyc2VzL3BoeXNpY3MvOC0wMXNjLWNsYXNzaWNhbC1tZWNoYW5pY3MtZmFsbC0yMDE2L2Fzc2lnbm1lbnRzL01JVDhfMDFGMTZfcHNldDFfbmV3LnBkZi1odHRwOi8vZGJwZWRpYS5vcmcvcmVzb3VyY2UvVmVsb2NpdHk=",
+      "@id": "tag#aHR0cHM6Ly9vY3cubWl0LmVkdS9jb3Vyc2VzL3BoeXNpY3MvOC0wMXNjLWNsYXNzaWNhbC1tZWNoYW5pY3MtZmFsbC0yMDE2L2Fzc2lnbm1lbnRzL01JVDhfMDFGMTZfcHNldDFfbmV3LnBkZi1odHRwOi8vZGJwZWRpYS5vcmcvcmVzb3VyY2UvVmVsb2NpdHk=",
       "@type": [
         "https://knowledge.express/Tag"
       ],
@@ -79,7 +79,7 @@
       "score": 0.738813
     },
     {
-      "@id": "tag:#aHR0cHM6Ly9vY3cubWl0LmVkdS9jb3Vyc2VzL3BoeXNpY3MvOC0wMXNjLWNsYXNzaWNhbC1tZWNoYW5pY3MtZmFsbC0yMDE2L2Fzc2lnbm1lbnRzL01JVDhfMDFGMTZfcHNldDFfbmV3LnBkZi1odHRwOi8vZGJwZWRpYS5vcmcvcmVzb3VyY2UvUGh5c2ljcw==",
+      "@id": "tag#aHR0cHM6Ly9vY3cubWl0LmVkdS9jb3Vyc2VzL3BoeXNpY3MvOC0wMXNjLWNsYXNzaWNhbC1tZWNoYW5pY3MtZmFsbC0yMDE2L2Fzc2lnbm1lbnRzL01JVDhfMDFGMTZfcHNldDFfbmV3LnBkZi1odHRwOi8vZGJwZWRpYS5vcmcvcmVzb3VyY2UvUGh5c2ljcw==",
       "@type": [
         "https://knowledge.express/Tag"
       ],
@@ -91,7 +91,7 @@
       "score": 0.711452
     },
     {
-      "@id": "tag:#aHR0cHM6Ly9vY3cubWl0LmVkdS9jb3Vyc2VzL3BoeXNpY3MvOC0wMXNjLWNsYXNzaWNhbC1tZWNoYW5pY3MtZmFsbC0yMDE2L2Fzc2lnbm1lbnRzL01JVDhfMDFGMTZfcHNldDFfbmV3LnBkZi1odHRwOi8vZGJwZWRpYS5vcmcvcmVzb3VyY2UvR2VuZXJhbF9yZWxhdGl2aXR5",
+      "@id": "tag#aHR0cHM6Ly9vY3cubWl0LmVkdS9jb3Vyc2VzL3BoeXNpY3MvOC0wMXNjLWNsYXNzaWNhbC1tZWNoYW5pY3MtZmFsbC0yMDE2L2Fzc2lnbm1lbnRzL01JVDhfMDFGMTZfcHNldDFfbmV3LnBkZi1odHRwOi8vZGJwZWRpYS5vcmcvcmVzb3VyY2UvR2VuZXJhbF9yZWxhdGl2aXR5",
       "@type": [
         "https://knowledge.express/Tag"
       ],
@@ -103,7 +103,7 @@
       "score": 0.673195
     },
     {
-      "@id": "tag:#aHR0cHM6Ly9vY3cubWl0LmVkdS9jb3Vyc2VzL3BoeXNpY3MvOC0wMXNjLWNsYXNzaWNhbC1tZWNoYW5pY3MtZmFsbC0yMDE2L2Fzc2lnbm1lbnRzL01JVDhfMDFGMTZfcHNldDFfbmV3LnBkZi1odHRwOi8vZGJwZWRpYS5vcmcvcmVzb3VyY2UvRnVuZGFtZW50YWxfcGh5c2ljc19jb25jZXB0cw==",
+      "@id": "tag#aHR0cHM6Ly9vY3cubWl0LmVkdS9jb3Vyc2VzL3BoeXNpY3MvOC0wMXNjLWNsYXNzaWNhbC1tZWNoYW5pY3MtZmFsbC0yMDE2L2Fzc2lnbm1lbnRzL01JVDhfMDFGMTZfcHNldDFfbmV3LnBkZi1odHRwOi8vZGJwZWRpYS5vcmcvcmVzb3VyY2UvRnVuZGFtZW50YWxfcGh5c2ljc19jb25jZXB0cw==",
       "@type": [
         "https://knowledge.express/Tag"
       ],
@@ -117,7 +117,7 @@
   ],
   "annotation": [
     {
-      "@id": "tag:#aHR0cHM6Ly9vY3cubWl0LmVkdS9jb3Vyc2VzL3BoeXNpY3MvOC0wMXNjLWNsYXNzaWNhbC1tZWNoYW5pY3MtZmFsbC0yMDE2L2Fzc2lnbm1lbnRzL01JVDhfMDFGMTZfcHNldDFfbmV3LnBkZi1odHRwOi8vZGJwZWRpYS5vcmcvcmVzb3VyY2UvQ2xhc3NpY2FsX21lY2hhbmljcy00MzcwLUNsYXNzaWNhbCBNZWNoYW5pY3M=",
+      "@id": "tag#aHR0cHM6Ly9vY3cubWl0LmVkdS9jb3Vyc2VzL3BoeXNpY3MvOC0wMXNjLWNsYXNzaWNhbC1tZWNoYW5pY3MtZmFsbC0yMDE2L2Fzc2lnbm1lbnRzL01JVDhfMDFGMTZfcHNldDFfbmV3LnBkZi1odHRwOi8vZGJwZWRpYS5vcmcvcmVzb3VyY2UvQ2xhc3NpY2FsX21lY2hhbmljcy00MzcwLUNsYXNzaWNhbCBNZWNoYW5pY3M=",
       "@type": [
         "DocumentAnnotation",
         "Annotation"
@@ -133,7 +133,7 @@
       "tagOf": "https://ocw.mit.edu/courses/physics/8-01sc-classical-mechanics-fall-2016/assignments/MIT8_01F16_pset1_new.pdf"
     },
     {
-      "@id": "tag:#aHR0cHM6Ly9vY3cubWl0LmVkdS9jb3Vyc2VzL3BoeXNpY3MvOC0wMXNjLWNsYXNzaWNhbC1tZWNoYW5pY3MtZmFsbC0yMDE2L2Fzc2lnbm1lbnRzL01JVDhfMDFGMTZfcHNldDFfbmV3LnBkZi1odHRwOi8vZGJwZWRpYS5vcmcvcmVzb3VyY2UvQ2xhc3NpY2FsX21lY2hhbmljcy02LUNsYXNzaWNhbCBNZWNoYW5pY3M=",
+      "@id": "tag#aHR0cHM6Ly9vY3cubWl0LmVkdS9jb3Vyc2VzL3BoeXNpY3MvOC0wMXNjLWNsYXNzaWNhbC1tZWNoYW5pY3MtZmFsbC0yMDE2L2Fzc2lnbm1lbnRzL01JVDhfMDFGMTZfcHNldDFfbmV3LnBkZi1odHRwOi8vZGJwZWRpYS5vcmcvcmVzb3VyY2UvQ2xhc3NpY2FsX21lY2hhbmljcy02LUNsYXNzaWNhbCBNZWNoYW5pY3M=",
       "@type": [
         "DocumentAnnotation",
         "Annotation"
@@ -149,7 +149,7 @@
       "tagOf": "https://ocw.mit.edu/courses/physics/8-01sc-classical-mechanics-fall-2016/assignments/MIT8_01F16_pset1_new.pdf"
     },
     {
-      "@id": "tag:#aHR0cHM6Ly9vY3cubWl0LmVkdS9jb3Vyc2VzL3BoeXNpY3MvOC0wMXNjLWNsYXNzaWNhbC1tZWNoYW5pY3MtZmFsbC0yMDE2L2Fzc2lnbm1lbnRzL01JVDhfMDFGMTZfcHNldDFfbmV3LnBkZi1odHRwOi8vZGJwZWRpYS5vcmcvcmVzb3VyY2UvQ2xhc3NpY2FsX21lY2hhbmljcy0xMTM2LUNsYXNzaWNhbCBNZWNoYW5pY3M=",
+      "@id": "tag#aHR0cHM6Ly9vY3cubWl0LmVkdS9jb3Vyc2VzL3BoeXNpY3MvOC0wMXNjLWNsYXNzaWNhbC1tZWNoYW5pY3MtZmFsbC0yMDE2L2Fzc2lnbm1lbnRzL01JVDhfMDFGMTZfcHNldDFfbmV3LnBkZi1odHRwOi8vZGJwZWRpYS5vcmcvcmVzb3VyY2UvQ2xhc3NpY2FsX21lY2hhbmljcy0xMTM2LUNsYXNzaWNhbCBNZWNoYW5pY3M=",
       "@type": [
         "DocumentAnnotation",
         "Annotation"
@@ -165,7 +165,7 @@
       "tagOf": "https://ocw.mit.edu/courses/physics/8-01sc-classical-mechanics-fall-2016/assignments/MIT8_01F16_pset1_new.pdf"
     },
     {
-      "@id": "tag:#aHR0cHM6Ly9vY3cubWl0LmVkdS9jb3Vyc2VzL3BoeXNpY3MvOC0wMXNjLWNsYXNzaWNhbC1tZWNoYW5pY3MtZmFsbC0yMDE2L2Fzc2lnbm1lbnRzL01JVDhfMDFGMTZfcHNldDFfbmV3LnBkZi1odHRwOi8vZGJwZWRpYS5vcmcvcmVzb3VyY2UvQ2xhc3NpY2FsX21lY2hhbmljcy0yMTQwLUNsYXNzaWNhbCBNZWNoYW5pY3M=",
+      "@id": "tag#aHR0cHM6Ly9vY3cubWl0LmVkdS9jb3Vyc2VzL3BoeXNpY3MvOC0wMXNjLWNsYXNzaWNhbC1tZWNoYW5pY3MtZmFsbC0yMDE2L2Fzc2lnbm1lbnRzL01JVDhfMDFGMTZfcHNldDFfbmV3LnBkZi1odHRwOi8vZGJwZWRpYS5vcmcvcmVzb3VyY2UvQ2xhc3NpY2FsX21lY2hhbmljcy0yMTQwLUNsYXNzaWNhbCBNZWNoYW5pY3M=",
       "@type": [
         "DocumentAnnotation",
         "Annotation"
@@ -181,7 +181,7 @@
       "tagOf": "https://ocw.mit.edu/courses/physics/8-01sc-classical-mechanics-fall-2016/assignments/MIT8_01F16_pset1_new.pdf"
     },
     {
-      "@id": "tag:#aHR0cHM6Ly9vY3cubWl0LmVkdS9jb3Vyc2VzL3BoeXNpY3MvOC0wMXNjLWNsYXNzaWNhbC1tZWNoYW5pY3MtZmFsbC0yMDE2L2Fzc2lnbm1lbnRzL01JVDhfMDFGMTZfcHNldDFfbmV3LnBkZi1odHRwOi8vZGJwZWRpYS5vcmcvcmVzb3VyY2UvQ2xhc3NpY2FsX21lY2hhbmljcy0yOTMwLUNsYXNzaWNhbCBNZWNoYW5pY3M=",
+      "@id": "tag#aHR0cHM6Ly9vY3cubWl0LmVkdS9jb3Vyc2VzL3BoeXNpY3MvOC0wMXNjLWNsYXNzaWNhbC1tZWNoYW5pY3MtZmFsbC0yMDE2L2Fzc2lnbm1lbnRzL01JVDhfMDFGMTZfcHNldDFfbmV3LnBkZi1odHRwOi8vZGJwZWRpYS5vcmcvcmVzb3VyY2UvQ2xhc3NpY2FsX21lY2hhbmljcy0yOTMwLUNsYXNzaWNhbCBNZWNoYW5pY3M=",
       "@type": [
         "DocumentAnnotation",
         "Annotation"
@@ -197,7 +197,7 @@
       "tagOf": "https://ocw.mit.edu/courses/physics/8-01sc-classical-mechanics-fall-2016/assignments/MIT8_01F16_pset1_new.pdf"
     },
     {
-      "@id": "tag:#aHR0cHM6Ly9vY3cubWl0LmVkdS9jb3Vyc2VzL3BoeXNpY3MvOC0wMXNjLWNsYXNzaWNhbC1tZWNoYW5pY3MtZmFsbC0yMDE2L2Fzc2lnbm1lbnRzL01JVDhfMDFGMTZfcHNldDFfbmV3LnBkZi1odHRwOi8vZGJwZWRpYS5vcmcvcmVzb3VyY2UvQ2xhc3NpY2FsX21lY2hhbmljcy0zNzE4LUNsYXNzaWNhbCBNZWNoYW5pY3M=",
+      "@id": "tag#aHR0cHM6Ly9vY3cubWl0LmVkdS9jb3Vyc2VzL3BoeXNpY3MvOC0wMXNjLWNsYXNzaWNhbC1tZWNoYW5pY3MtZmFsbC0yMDE2L2Fzc2lnbm1lbnRzL01JVDhfMDFGMTZfcHNldDFfbmV3LnBkZi1odHRwOi8vZGJwZWRpYS5vcmcvcmVzb3VyY2UvQ2xhc3NpY2FsX21lY2hhbmljcy0zNzE4LUNsYXNzaWNhbCBNZWNoYW5pY3M=",
       "@type": [
         "DocumentAnnotation",
         "Annotation"
@@ -213,7 +213,7 @@
       "tagOf": "https://ocw.mit.edu/courses/physics/8-01sc-classical-mechanics-fall-2016/assignments/MIT8_01F16_pset1_new.pdf"
     },
     {
-      "@id": "tag:#aHR0cHM6Ly9vY3cubWl0LmVkdS9jb3Vyc2VzL3BoeXNpY3MvOC0wMXNjLWNsYXNzaWNhbC1tZWNoYW5pY3MtZmFsbC0yMDE2L2Fzc2lnbm1lbnRzL01JVDhfMDFGMTZfcHNldDFfbmV3LnBkZi1odHRwOi8vZGJwZWRpYS5vcmcvcmVzb3VyY2UvQWNjZWxlcmF0aW9uLTE0MzUtYWNjZWxlcmF0aW9u",
+      "@id": "tag#aHR0cHM6Ly9vY3cubWl0LmVkdS9jb3Vyc2VzL3BoeXNpY3MvOC0wMXNjLWNsYXNzaWNhbC1tZWNoYW5pY3MtZmFsbC0yMDE2L2Fzc2lnbm1lbnRzL01JVDhfMDFGMTZfcHNldDFfbmV3LnBkZi1odHRwOi8vZGJwZWRpYS5vcmcvcmVzb3VyY2UvQWNjZWxlcmF0aW9uLTE0MzUtYWNjZWxlcmF0aW9u",
       "@type": [
         "DocumentAnnotation",
         "Annotation"
@@ -228,7 +228,7 @@
       "tagOf": "https://ocw.mit.edu/courses/physics/8-01sc-classical-mechanics-fall-2016/assignments/MIT8_01F16_pset1_new.pdf"
     },
     {
-      "@id": "tag:#aHR0cHM6Ly9vY3cubWl0LmVkdS9jb3Vyc2VzL3BoeXNpY3MvOC0wMXNjLWNsYXNzaWNhbC1tZWNoYW5pY3MtZmFsbC0yMDE2L2Fzc2lnbm1lbnRzL01JVDhfMDFGMTZfcHNldDFfbmV3LnBkZi1odHRwOi8vZGJwZWRpYS5vcmcvcmVzb3VyY2UvQWNjZWxlcmF0aW9uLTE2MDEtYWNjZWxlcmF0aW9u",
+      "@id": "tag#aHR0cHM6Ly9vY3cubWl0LmVkdS9jb3Vyc2VzL3BoeXNpY3MvOC0wMXNjLWNsYXNzaWNhbC1tZWNoYW5pY3MtZmFsbC0yMDE2L2Fzc2lnbm1lbnRzL01JVDhfMDFGMTZfcHNldDFfbmV3LnBkZi1odHRwOi8vZGJwZWRpYS5vcmcvcmVzb3VyY2UvQWNjZWxlcmF0aW9uLTE2MDEtYWNjZWxlcmF0aW9u",
       "@type": [
         "DocumentAnnotation",
         "Annotation"
@@ -243,7 +243,7 @@
       "tagOf": "https://ocw.mit.edu/courses/physics/8-01sc-classical-mechanics-fall-2016/assignments/MIT8_01F16_pset1_new.pdf"
     },
     {
-      "@id": "tag:#aHR0cHM6Ly9vY3cubWl0LmVkdS9jb3Vyc2VzL3BoeXNpY3MvOC0wMXNjLWNsYXNzaWNhbC1tZWNoYW5pY3MtZmFsbC0yMDE2L2Fzc2lnbm1lbnRzL01JVDhfMDFGMTZfcHNldDFfbmV3LnBkZi1odHRwOi8vZGJwZWRpYS5vcmcvcmVzb3VyY2UvQWNjZWxlcmF0aW9uLTE2NjUtYWNjZWxlcmF0aW9u",
+      "@id": "tag#aHR0cHM6Ly9vY3cubWl0LmVkdS9jb3Vyc2VzL3BoeXNpY3MvOC0wMXNjLWNsYXNzaWNhbC1tZWNoYW5pY3MtZmFsbC0yMDE2L2Fzc2lnbm1lbnRzL01JVDhfMDFGMTZfcHNldDFfbmV3LnBkZi1odHRwOi8vZGJwZWRpYS5vcmcvcmVzb3VyY2UvQWNjZWxlcmF0aW9uLTE2NjUtYWNjZWxlcmF0aW9u",
       "@type": [
         "DocumentAnnotation",
         "Annotation"
@@ -258,7 +258,7 @@
       "tagOf": "https://ocw.mit.edu/courses/physics/8-01sc-classical-mechanics-fall-2016/assignments/MIT8_01F16_pset1_new.pdf"
     },
     {
-      "@id": "tag:#aHR0cHM6Ly9vY3cubWl0LmVkdS9jb3Vyc2VzL3BoeXNpY3MvOC0wMXNjLWNsYXNzaWNhbC1tZWNoYW5pY3MtZmFsbC0yMDE2L2Fzc2lnbm1lbnRzL01JVDhfMDFGMTZfcHNldDFfbmV3LnBkZi1odHRwOi8vZGJwZWRpYS5vcmcvcmVzb3VyY2UvQWNjZWxlcmF0aW9uLTIwOTgtYWNjZWxlcmF0aW9u",
+      "@id": "tag#aHR0cHM6Ly9vY3cubWl0LmVkdS9jb3Vyc2VzL3BoeXNpY3MvOC0wMXNjLWNsYXNzaWNhbC1tZWNoYW5pY3MtZmFsbC0yMDE2L2Fzc2lnbm1lbnRzL01JVDhfMDFGMTZfcHNldDFfbmV3LnBkZi1odHRwOi8vZGJwZWRpYS5vcmcvcmVzb3VyY2UvQWNjZWxlcmF0aW9uLTIwOTgtYWNjZWxlcmF0aW9u",
       "@type": [
         "DocumentAnnotation",
         "Annotation"
@@ -273,7 +273,7 @@
       "tagOf": "https://ocw.mit.edu/courses/physics/8-01sc-classical-mechanics-fall-2016/assignments/MIT8_01F16_pset1_new.pdf"
     },
     {
-      "@id": "tag:#aHR0cHM6Ly9vY3cubWl0LmVkdS9jb3Vyc2VzL3BoeXNpY3MvOC0wMXNjLWNsYXNzaWNhbC1tZWNoYW5pY3MtZmFsbC0yMDE2L2Fzc2lnbm1lbnRzL01JVDhfMDFGMTZfcHNldDFfbmV3LnBkZi1odHRwOi8vZGJwZWRpYS5vcmcvcmVzb3VyY2UvQWNjZWxlcmF0aW9uLTIzNTktYWNjZWxlcmF0aW9u",
+      "@id": "tag#aHR0cHM6Ly9vY3cubWl0LmVkdS9jb3Vyc2VzL3BoeXNpY3MvOC0wMXNjLWNsYXNzaWNhbC1tZWNoYW5pY3MtZmFsbC0yMDE2L2Fzc2lnbm1lbnRzL01JVDhfMDFGMTZfcHNldDFfbmV3LnBkZi1odHRwOi8vZGJwZWRpYS5vcmcvcmVzb3VyY2UvQWNjZWxlcmF0aW9uLTIzNTktYWNjZWxlcmF0aW9u",
       "@type": [
         "DocumentAnnotation",
         "Annotation"
@@ -288,7 +288,7 @@
       "tagOf": "https://ocw.mit.edu/courses/physics/8-01sc-classical-mechanics-fall-2016/assignments/MIT8_01F16_pset1_new.pdf"
     },
     {
-      "@id": "tag:#aHR0cHM6Ly9vY3cubWl0LmVkdS9jb3Vyc2VzL3BoeXNpY3MvOC0wMXNjLWNsYXNzaWNhbC1tZWNoYW5pY3MtZmFsbC0yMDE2L2Fzc2lnbm1lbnRzL01JVDhfMDFGMTZfcHNldDFfbmV3LnBkZi1odHRwOi8vZGJwZWRpYS5vcmcvcmVzb3VyY2UvQWNjZWxlcmF0aW9uLTMxNC1hY2NlbGVyYXRpb24=",
+      "@id": "tag#aHR0cHM6Ly9vY3cubWl0LmVkdS9jb3Vyc2VzL3BoeXNpY3MvOC0wMXNjLWNsYXNzaWNhbC1tZWNoYW5pY3MtZmFsbC0yMDE2L2Fzc2lnbm1lbnRzL01JVDhfMDFGMTZfcHNldDFfbmV3LnBkZi1odHRwOi8vZGJwZWRpYS5vcmcvcmVzb3VyY2UvQWNjZWxlcmF0aW9uLTMxNC1hY2NlbGVyYXRpb24=",
       "@type": [
         "DocumentAnnotation",
         "Annotation"
@@ -303,7 +303,7 @@
       "tagOf": "https://ocw.mit.edu/courses/physics/8-01sc-classical-mechanics-fall-2016/assignments/MIT8_01F16_pset1_new.pdf"
     },
     {
-      "@id": "tag:#aHR0cHM6Ly9vY3cubWl0LmVkdS9jb3Vyc2VzL3BoeXNpY3MvOC0wMXNjLWNsYXNzaWNhbC1tZWNoYW5pY3MtZmFsbC0yMDE2L2Fzc2lnbm1lbnRzL01JVDhfMDFGMTZfcHNldDFfbmV3LnBkZi1odHRwOi8vZGJwZWRpYS5vcmcvcmVzb3VyY2UvQWNjZWxlcmF0aW9uLTMyOTUtYWNjZWxlcmF0aW9u",
+      "@id": "tag#aHR0cHM6Ly9vY3cubWl0LmVkdS9jb3Vyc2VzL3BoeXNpY3MvOC0wMXNjLWNsYXNzaWNhbC1tZWNoYW5pY3MtZmFsbC0yMDE2L2Fzc2lnbm1lbnRzL01JVDhfMDFGMTZfcHNldDFfbmV3LnBkZi1odHRwOi8vZGJwZWRpYS5vcmcvcmVzb3VyY2UvQWNjZWxlcmF0aW9uLTMyOTUtYWNjZWxlcmF0aW9u",
       "@type": [
         "DocumentAnnotation",
         "Annotation"
@@ -318,7 +318,7 @@
       "tagOf": "https://ocw.mit.edu/courses/physics/8-01sc-classical-mechanics-fall-2016/assignments/MIT8_01F16_pset1_new.pdf"
     },
     {
-      "@id": "tag:#aHR0cHM6Ly9vY3cubWl0LmVkdS9jb3Vyc2VzL3BoeXNpY3MvOC0wMXNjLWNsYXNzaWNhbC1tZWNoYW5pY3MtZmFsbC0yMDE2L2Fzc2lnbm1lbnRzL01JVDhfMDFGMTZfcHNldDFfbmV3LnBkZi1odHRwOi8vZGJwZWRpYS5vcmcvcmVzb3VyY2UvQWNjZWxlcmF0aW9uLTQ3NC1hY2NlbGVyYXRpb24=",
+      "@id": "tag#aHR0cHM6Ly9vY3cubWl0LmVkdS9jb3Vyc2VzL3BoeXNpY3MvOC0wMXNjLWNsYXNzaWNhbC1tZWNoYW5pY3MtZmFsbC0yMDE2L2Fzc2lnbm1lbnRzL01JVDhfMDFGMTZfcHNldDFfbmV3LnBkZi1odHRwOi8vZGJwZWRpYS5vcmcvcmVzb3VyY2UvQWNjZWxlcmF0aW9uLTQ3NC1hY2NlbGVyYXRpb24=",
       "@type": [
         "DocumentAnnotation",
         "Annotation"
@@ -333,7 +333,7 @@
       "tagOf": "https://ocw.mit.edu/courses/physics/8-01sc-classical-mechanics-fall-2016/assignments/MIT8_01F16_pset1_new.pdf"
     },
     {
-      "@id": "tag:#aHR0cHM6Ly9vY3cubWl0LmVkdS9jb3Vyc2VzL3BoeXNpY3MvOC0wMXNjLWNsYXNzaWNhbC1tZWNoYW5pY3MtZmFsbC0yMDE2L2Fzc2lnbm1lbnRzL01JVDhfMDFGMTZfcHNldDFfbmV3LnBkZi1odHRwOi8vZGJwZWRpYS5vcmcvcmVzb3VyY2UvQWNjZWxlcmF0aW9uLTg5NC1hY2NlbGVyYXRpb24=",
+      "@id": "tag#aHR0cHM6Ly9vY3cubWl0LmVkdS9jb3Vyc2VzL3BoeXNpY3MvOC0wMXNjLWNsYXNzaWNhbC1tZWNoYW5pY3MtZmFsbC0yMDE2L2Fzc2lnbm1lbnRzL01JVDhfMDFGMTZfcHNldDFfbmV3LnBkZi1odHRwOi8vZGJwZWRpYS5vcmcvcmVzb3VyY2UvQWNjZWxlcmF0aW9uLTg5NC1hY2NlbGVyYXRpb24=",
       "@type": [
         "DocumentAnnotation",
         "Annotation"
@@ -348,7 +348,7 @@
       "tagOf": "https://ocw.mit.edu/courses/physics/8-01sc-classical-mechanics-fall-2016/assignments/MIT8_01F16_pset1_new.pdf"
     },
     {
-      "@id": "tag:#aHR0cHM6Ly9vY3cubWl0LmVkdS9jb3Vyc2VzL3BoeXNpY3MvOC0wMXNjLWNsYXNzaWNhbC1tZWNoYW5pY3MtZmFsbC0yMDE2L2Fzc2lnbm1lbnRzL01JVDhfMDFGMTZfcHNldDFfbmV3LnBkZi1odHRwOi8vZGJwZWRpYS5vcmcvcmVzb3VyY2UvVmVsb2NpdHktMTUzMS12ZWxvY2l0eQ==",
+      "@id": "tag#aHR0cHM6Ly9vY3cubWl0LmVkdS9jb3Vyc2VzL3BoeXNpY3MvOC0wMXNjLWNsYXNzaWNhbC1tZWNoYW5pY3MtZmFsbC0yMDE2L2Fzc2lnbm1lbnRzL01JVDhfMDFGMTZfcHNldDFfbmV3LnBkZi1odHRwOi8vZGJwZWRpYS5vcmcvcmVzb3VyY2UvVmVsb2NpdHktMTUzMS12ZWxvY2l0eQ==",
       "@type": [
         "DocumentAnnotation",
         "Annotation"
@@ -363,7 +363,7 @@
       "tagOf": "https://ocw.mit.edu/courses/physics/8-01sc-classical-mechanics-fall-2016/assignments/MIT8_01F16_pset1_new.pdf"
     },
     {
-      "@id": "tag:#aHR0cHM6Ly9vY3cubWl0LmVkdS9jb3Vyc2VzL3BoeXNpY3MvOC0wMXNjLWNsYXNzaWNhbC1tZWNoYW5pY3MtZmFsbC0yMDE2L2Fzc2lnbm1lbnRzL01JVDhfMDFGMTZfcHNldDFfbmV3LnBkZi1odHRwOi8vZGJwZWRpYS5vcmcvcmVzb3VyY2UvVmVsb2NpdHktMTc2Mi12ZWxvY2l0eQ==",
+      "@id": "tag#aHR0cHM6Ly9vY3cubWl0LmVkdS9jb3Vyc2VzL3BoeXNpY3MvOC0wMXNjLWNsYXNzaWNhbC1tZWNoYW5pY3MtZmFsbC0yMDE2L2Fzc2lnbm1lbnRzL01JVDhfMDFGMTZfcHNldDFfbmV3LnBkZi1odHRwOi8vZGJwZWRpYS5vcmcvcmVzb3VyY2UvVmVsb2NpdHktMTc2Mi12ZWxvY2l0eQ==",
       "@type": [
         "DocumentAnnotation",
         "Annotation"
@@ -378,7 +378,7 @@
       "tagOf": "https://ocw.mit.edu/courses/physics/8-01sc-classical-mechanics-fall-2016/assignments/MIT8_01F16_pset1_new.pdf"
     },
     {
-      "@id": "tag:#aHR0cHM6Ly9vY3cubWl0LmVkdS9jb3Vyc2VzL3BoeXNpY3MvOC0wMXNjLWNsYXNzaWNhbC1tZWNoYW5pY3MtZmFsbC0yMDE2L2Fzc2lnbm1lbnRzL01JVDhfMDFGMTZfcHNldDFfbmV3LnBkZi1odHRwOi8vZGJwZWRpYS5vcmcvcmVzb3VyY2UvVmVsb2NpdHktMzE0OS12ZWxvY2l0eQ==",
+      "@id": "tag#aHR0cHM6Ly9vY3cubWl0LmVkdS9jb3Vyc2VzL3BoeXNpY3MvOC0wMXNjLWNsYXNzaWNhbC1tZWNoYW5pY3MtZmFsbC0yMDE2L2Fzc2lnbm1lbnRzL01JVDhfMDFGMTZfcHNldDFfbmV3LnBkZi1odHRwOi8vZGJwZWRpYS5vcmcvcmVzb3VyY2UvVmVsb2NpdHktMzE0OS12ZWxvY2l0eQ==",
       "@type": [
         "DocumentAnnotation",
         "Annotation"
@@ -393,7 +393,7 @@
       "tagOf": "https://ocw.mit.edu/courses/physics/8-01sc-classical-mechanics-fall-2016/assignments/MIT8_01F16_pset1_new.pdf"
     },
     {
-      "@id": "tag:#aHR0cHM6Ly9vY3cubWl0LmVkdS9jb3Vyc2VzL3BoeXNpY3MvOC0wMXNjLWNsYXNzaWNhbC1tZWNoYW5pY3MtZmFsbC0yMDE2L2Fzc2lnbm1lbnRzL01JVDhfMDFGMTZfcHNldDFfbmV3LnBkZi1odHRwOi8vZGJwZWRpYS5vcmcvcmVzb3VyY2UvVmVsb2NpdHktNTU1LXZlbG9jaXR5",
+      "@id": "tag#aHR0cHM6Ly9vY3cubWl0LmVkdS9jb3Vyc2VzL3BoeXNpY3MvOC0wMXNjLWNsYXNzaWNhbC1tZWNoYW5pY3MtZmFsbC0yMDE2L2Fzc2lnbm1lbnRzL01JVDhfMDFGMTZfcHNldDFfbmV3LnBkZi1odHRwOi8vZGJwZWRpYS5vcmcvcmVzb3VyY2UvVmVsb2NpdHktNTU1LXZlbG9jaXR5",
       "@type": [
         "DocumentAnnotation",
         "Annotation"
@@ -408,7 +408,7 @@
       "tagOf": "https://ocw.mit.edu/courses/physics/8-01sc-classical-mechanics-fall-2016/assignments/MIT8_01F16_pset1_new.pdf"
     },
     {
-      "@id": "tag:#aHR0cHM6Ly9vY3cubWl0LmVkdS9jb3Vyc2VzL3BoeXNpY3MvOC0wMXNjLWNsYXNzaWNhbC1tZWNoYW5pY3MtZmFsbC0yMDE2L2Fzc2lnbm1lbnRzL01JVDhfMDFGMTZfcHNldDFfbmV3LnBkZi1odHRwOi8vZGJwZWRpYS5vcmcvcmVzb3VyY2UvVmVsb2NpdHktOTg5LXZlbG9jaXR5",
+      "@id": "tag#aHR0cHM6Ly9vY3cubWl0LmVkdS9jb3Vyc2VzL3BoeXNpY3MvOC0wMXNjLWNsYXNzaWNhbC1tZWNoYW5pY3MtZmFsbC0yMDE2L2Fzc2lnbm1lbnRzL01JVDhfMDFGMTZfcHNldDFfbmV3LnBkZi1odHRwOi8vZGJwZWRpYS5vcmcvcmVzb3VyY2UvVmVsb2NpdHktOTg5LXZlbG9jaXR5",
       "@type": [
         "DocumentAnnotation",
         "Annotation"
