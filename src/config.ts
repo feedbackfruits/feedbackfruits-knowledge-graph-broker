@@ -16,6 +16,7 @@ const {
 const CONCURRENCY = parseInt(process.env.CONCURRENCY) || 5;
 const WEB_CONCURRENCY = parseInt(process.env.WEB_CONCURRENCY) || 50;
 const GRAPH = 'GRAPH' in process.env ? process.env.GRAPH : `<https://knowledge.express/graph/${NODE_ENV}>`;
+const SEND_UNUPDATED_DOCS = process.env.SEND_UNUPDATED_DOCS === "true" || false;
 
 export {
   NAME,
@@ -31,4 +32,5 @@ export {
   KAFKA_CERT,
   KAFKA_CA,
   GRAPH,
+  SEND_UNUPDATED_DOCS,
 };

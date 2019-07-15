@@ -29,7 +29,7 @@ async function init({ name }: BrokerConfig) {
       diff = Helpers.deduplicateQuads(Helpers.quickDiff(existingQuads, quads));
       console.log(`${diff.length} quads in diff.`);
 
-      if (diff.length === 0) return diff.length;
+      if (diff.length === 0 && !(Config.SEND_UNUPDATED_DOCS)) return diff.length;
 
       const totalQuads = [ ...existingQuads, ...diff ];
 
@@ -49,7 +49,7 @@ async function init({ name }: BrokerConfig) {
 
       // Write diff only if validation passes
       console.log('Processing diff:', diff);
-      await Neptune.writeQuads(diff);
+      if (diff.length > 0) await Neptune.writeQuads(diff);
       console.log('Quads processed. Sending updated doc(s)...');
 
       await send({ action, key: framed['@id'], data: framed });
