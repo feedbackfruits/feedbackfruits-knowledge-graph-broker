@@ -22,12 +22,12 @@ export function parseResult(result: any) {
   // if (!bindings.length) return [];
 
   const res = bindings.reduce((memo, binding) => {
-    const { subject, predicate, object } = binding;
+    const { subject, predicate, object, datatype } = binding;
 
     const quad = {
       subject: subject.value,
       predicate: predicate.value,
-      object: object.value,
+      object: datatype ? `"${object.value}"^^<${datatype}>` : object.value,
     };
 
     return [ ...memo, quad ];
