@@ -4,5 +4,5 @@ export declare type BrokerConfig = {
     name: string;
 };
 export declare type SendFn = (operation: Operation<Doc>) => Promise<void>;
-declare function init({ name }: BrokerConfig): Promise<any>;
+declare function init({ name }: BrokerConfig): Promise<void>;
 export default init;
