@@ -25,7 +25,7 @@
     "@types/node": "^12.6.2",
     "dataloader": "^1.4.0",
     "dotenv": "^8.0.0",
-    "feedbackfruits-knowledge-engine": "github:feedbackfruits/feedbackfruits-knowledge-engine#^1.4.5",
+    "feedbackfruits-knowledge-engine": "github:feedbackfruits/feedbackfruits-knowledge-engine#^1.4.6",
     "isuri": "^2.0.3",
     "memux": "github:knowledge-express/memux#~0.4.2",
     "node-fetch": "^2.6.0",

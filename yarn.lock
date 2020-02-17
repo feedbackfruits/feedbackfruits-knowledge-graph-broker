@@ -1740,24 +1740,24 @@ fastq@^1.6.0:
   dependencies:
     reusify "^1.0.0"
 
-feedbackfruits-knowledge-context@feedbackfruits/feedbackfruits-knowledge-context#v1.1.15:
-  version "1.1.15"
-  resolved "https://codeload.github.com/feedbackfruits/feedbackfruits-knowledge-context/tar.gz/28a85ebf9f177e02aa2d3a387eef8ceffdf7c416"
+feedbackfruits-knowledge-context@feedbackfruits/feedbackfruits-knowledge-context#v1.1.16:
+  version "1.1.16"
+  resolved "https://codeload.github.com/feedbackfruits/feedbackfruits-knowledge-context/tar.gz/e9715f29a95a172212fb25ef3185b69391f8432e"
   dependencies:
     "@types/node" "^12.6.1"
     recursive-readdir-sync "^1.0.6"
     tslint "^5.18.0"
     typescript "^3.5.3"
 
-"feedbackfruits-knowledge-engine@github:feedbackfruits/feedbackfruits-knowledge-engine#^1.4.5":
-  version "1.4.5"
-  resolved "https://codeload.github.com/feedbackfruits/feedbackfruits-knowledge-engine/tar.gz/1eb0e3ea6194883e99c5556451748746ea2fee6a"
+"feedbackfruits-knowledge-engine@github:feedbackfruits/feedbackfruits-knowledge-engine#^1.4.6":
+  version "1.4.6"
+  resolved "https://codeload.github.com/feedbackfruits/feedbackfruits-knowledge-engine/tar.gz/e4f34f051bc49aecf9cfdd9167447aea86606da9"
   dependencies:
     "@types/n3" "^1.1.0"
     "@types/node" "^12.6.1"
     dotenv "^8.0.0"
     duration-iso-8601 "^1.1.0"
-    feedbackfruits-knowledge-context feedbackfruits/feedbackfruits-knowledge-context#v1.1.15
+    feedbackfruits-knowledge-context feedbackfruits/feedbackfruits-knowledge-context#v1.1.16
     isuri "^2.0.3"
     jsonld "^1.6.2"
     memux "^0.4.5"
